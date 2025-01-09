@@ -3,6 +3,7 @@
 </script>
 
 <div class="btmcall">
+    <div class="btmcall-text">Interested in the project?</div>
     <div class="btmcall-buttons">
         <div class="btmcall-button1">
             <div class="btmcall-get-involved">Get Involved!</div>
@@ -11,5 +12,4 @@
             <div class="btmcall-contact-us">Contact Us</div>
         </div>
     </div>
-    <div class="btmcall-text">Interested in the project?</div>
 </div>

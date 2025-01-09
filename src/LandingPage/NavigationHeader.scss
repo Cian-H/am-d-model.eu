@@ -2,7 +2,6 @@
   position: relative;
   height: 116.03px;
   width: 100%;
-  overflow: hidden;
 }
 
 .navigation-header-items {
@@ -46,6 +45,12 @@
 
 .navigation-header-contact-us {
   @extend .navigation-header-link;
-  color: var(--cpalettedark);
+  color: var(--background);
   text-decoration: none;
+}
+
+@media (max-width: 720px) {
+  .navigation-header {
+    display: none;
+  }
 }

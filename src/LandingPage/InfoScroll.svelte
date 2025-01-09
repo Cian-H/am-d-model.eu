@@ -4,7 +4,9 @@
 
 <div class="infscr">
     <div class="infscr-row">
-        <div><img class="infscr-image" src="buildplate0.png" /></div>
+        <div class="infscr-image-div">
+            <img class="infscr-image" src="buildplate0.png" />
+        </div>
         <div class="infscr-textcol">
             <div class="infscr-title">Experts in L-PBF</div>
             <div class="infscr-subcol">
@@ -34,7 +36,9 @@
         </div>
     </div>
     <div class="infscr-row-reverse">
-        <div><img class="infscr-image" src="data0.png" /></div>
+        <div class="infscr-image-div">
+            <img class="infscr-image" src="data0.png" />
+        </div>
         <div class="infscr-textcol">
             <div class="infscr-title">Data Driven Research</div>
             <div class="infscr-subcol">
@@ -67,7 +71,7 @@
         </div>
     </div>
     <div class="infscr-row">
-        <div>
+        <div class="infscr-image-div">
             <img class="infscr-image" src="open-science-palettematched0.png" />
         </div>
         <div class="infscr-textcol">

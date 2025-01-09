@@ -3,6 +3,7 @@
 
 :root {
     /* Colors */
+    --background: #090541;
     --cpalettelight: #009990;
     --cpalettemedium: #074799;
     --cpalettecomplimentary: #ffffff;
@@ -13,7 +14,9 @@
     --navigation-header-link-font-weight: 700;
     /* For the splash on the landing page */
     --splash-title-font-family: "Martel", sans-serif;
-    --splash-title-font-size: 64px;
+    --splash-title-font-size-large: 64px;
+    --splash-title-font-size-small: 48px;
+    --splash-title-font-size-tiny: 32px;
     --splash-title-font-weight: 700;
     --splash-body-font-family: "Assistant", sans-serif;
     --splash-body-font-size: 24px;
@@ -36,6 +39,9 @@
     --infscr-titlegap-size: 0.75rem;
     --infscr-textgap-size: 0.2rem;
     /* For the navigation footer on the landing page */
+    --bottom-call-font-family: "Martel", sans-serif;
+    --bottom-call-font-size-large: 64px;
+    --bottom-call-font-size-small: 48px;
     --navigation-footer-spacing: 24px;
 
     /* Effects */

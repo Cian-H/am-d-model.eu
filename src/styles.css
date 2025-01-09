@@ -1,4 +1,3 @@
-
 a,
 button,
 input,
@@ -19,7 +18,9 @@ h5,
     -webkit-font-smoothing: antialiased;
 }
 
-menu, ol, ul {
+menu,
+ol,
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
