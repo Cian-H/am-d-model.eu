@@ -1,0 +1,110 @@
+.navigation-footer {
+  background: #ffffff;
+  height: 264px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.navigation-footer-site-name {
+  color: #000000;
+  text-align: left;
+  font-family: var(--body-font-family, "Assistant-Regular", sans-serif);
+  font-size: var(--body-font-size, 24px);
+  font-weight: var(--body-font-weight, 400);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navigation-footer-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--navigation-footer-spacing);
+  align-items: flex-end;
+  justify-content: center;
+  width: 187px;
+  position: absolute;
+}
+
+.navigation-footer-topic {
+  color: #000000;
+  text-align: left;
+  font-family: "Assistant-Regular", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navigation-footer-link {
+  color: #454545;
+  text-align: left;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size, 24px);
+  font-weight: var(--body-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navigation-footer-social-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  overflow: visible;
+}
+
+.navigation-footer-social-icons {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-xs, 8px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  left: 80px;
+  top: 176px;
+}
+
+.navigation-footer-buttons-icon {
+  border-radius: 4px;
+  padding: 8px;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.navigation-footer-return {
+  color: rgba(69, 69, 69, 0.5);
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navigation-footer-divider {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #e6e6e6;
+  border-width: 1px 0 0 0;
+  width: 1280px;
+  height: 0px;
+  position: absolute;
+  left: 80px;
+  top: 1px;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}

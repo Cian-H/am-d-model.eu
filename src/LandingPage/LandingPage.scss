@@ -1,0 +1,27 @@
+  .landing-page,
+  .landing-page * {
+    box-sizing: border-box;
+  }
+
+  .landing-page {
+    background: var(--background, #090541);
+    height: 3860px;
+    width: 100vw;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landing-zone {
+    position: relative;
+    background-image: url("background-f-000143-10.png");
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    overflow: hidden;
+  }
