@@ -1,18 +1,43 @@
-/* Figma Styles of your File */:root {
-  /* Colors */
-  /* Fonts */
-  --title-font-family: Martel-Regular, sans-serif;
-  --title-font-size: 64px;
-  --title-line-height: normal;
-  --title-font-weight: 400;
-  --title-font-style: normal;
-  --body-font-family: Assistant-Regular, sans-serif;
-  --body-font-size: 24px;
-  --body-line-height: normal;
-  --body-font-weight: 400;
-  --body-font-style: normal;
+@import url('https://fonts.cdnfonts.com/css/martel-2');
+@import url('https://fonts.cdnfonts.com/css/assistant');
 
-  /* Effects */
+:root {
+    /* Colors */
+    --cpalettelight: #009990;
+    --cpalettemedium: #074799;
+    --cpalettecomplimentary: #ffffff;
+
+    /* For the navigation header on the landing page */
+    --navigation-header-link-font-family: "Assistant", sans-serif;
+    --navigation-header-link-font-size: 24px;
+    --navigation-header-link-font-weight: 700;
+    /* For the splash on the landing page */
+    --splash-title-font-family: "Martel", sans-serif;
+    --splash-title-font-size: 64px;
+    --splash-title-font-weight: 700;
+    --splash-body-font-family: "Assistant", sans-serif;
+    --splash-body-font-size: 24px;
+    --splash-body-font-weight: 400;
+    /* For the info scroll on the landing page */
+    --infscr-vpad: 54px;
+    --infscr-hpad: 32px;
+    --infscr-title-font-family: "Martel", sans-serif;
+    --infscr-title-font-size: 54px;
+    --infscr-title-font-weight: 700;
+    --infscr-subtitle-font-family: "Assistant", sans-serif;
+    --infscr-subtitle-font-size: 32px;
+    --infscr-subtitle-font-weight: 700;
+    --infscr-body-font-family: "Assistant", sans-serif;
+    --infscr-body-font-size: 28px;
+    --infscr-body-font-weight: 400;
+    --infscr-corner-round: 28px;
+    --infscr-img-size: 680px;
+    --infscr-cardgap-size: 54px;
+    --infscr-titlegap-size: 0.75rem;
+    --infscr-textgap-size: 0.2rem;
+    /* For the navigation footer on the landing page */
+    --navigation-footer-spacing: 24px;
+
+    /* Effects */
 
 }
-
