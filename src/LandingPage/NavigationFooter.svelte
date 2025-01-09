@@ -7,16 +7,32 @@
         <div class="navigation-footer-site-name">AM-D-Model.eu</div>
         <div class="navigation-footer-social-media">
             <div class="navigation-footer-buttons-icon">
-                <img class="navigation-footer-social-icon" src="icon0.svg" />
+                <img
+                    class="navigation-footer-social-icon"
+                    src="facebook.svg"
+                    alt="Grey Facebook icon"
+                />
             </div>
             <div class="navigation-footer-buttons-icon">
-                <img class="navigation-footer-social-icon" src="icon1.svg" />
+                <img
+                    class="navigation-footer-social-icon"
+                    src="linkedin.svg"
+                    alt="Grey LinkedIn icon"
+                />
             </div>
             <div class="navigation-footer-buttons-icon">
-                <img class="navigation-footer-social-icon" src="icon2.svg" />
+                <img
+                    class="navigation-footer-social-icon"
+                    src="youtube.svg"
+                    alt="Grey YouTube icon"
+                />
             </div>
             <div class="navigation-footer-buttons-icon">
-                <img class="navigation-footer-social-icon" src="icon3.svg" />
+                <img
+                    class="navigation-footer-social-icon"
+                    src="instagram.svg"
+                    alt="Grey Instagram icon"
+                />
             </div>
         </div>
     </div>

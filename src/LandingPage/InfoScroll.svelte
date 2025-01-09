@@ -5,7 +5,11 @@
 <div class="infscr">
     <div class="infscr-row">
         <div class="infscr-image-div">
-            <img class="infscr-image" src="buildplate0.png" />
+            <img
+                class="infscr-image"
+                src="buildplate.webp"
+                alt="An L-PBF buildplate after a successful print"
+            />
         </div>
         <div class="infscr-textcol">
             <div class="infscr-title">Experts in L-PBF</div>
@@ -37,7 +41,11 @@
     </div>
     <div class="infscr-row-reverse">
         <div class="infscr-image-div">
-            <img class="infscr-image" src="data0.png" />
+            <img
+                class="infscr-image"
+                src="data.webp"
+                alt="A dashboard featuring L-PBF thermographic analyses"
+            />
         </div>
         <div class="infscr-textcol">
             <div class="infscr-title">Data Driven Research</div>
@@ -72,7 +80,11 @@
     </div>
     <div class="infscr-row">
         <div class="infscr-image-div">
-            <img class="infscr-image" src="open-science-palettematched0.png" />
+            <img
+                class="infscr-image"
+                src="openscience.webp"
+                alt="A render of the open science logo with a modified color palette"
+            />
         </div>
         <div class="infscr-textcol">
             <div class="infscr-title">Open Science</div>
