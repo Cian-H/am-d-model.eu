@@ -1,9 +1,11 @@
 .splash {
   position: relative;
   max-width: 95%;
-  top: 0px;
+  bottom: 0;
+  padding-top: 128px;
   padding-bottom: 128px;
-  padding-right: 32px
+  padding-right: 32px;
+  z-index: 3;
 }
 
 .splash-copy {
@@ -44,6 +46,9 @@
 
 .splash-button {
   background: var(--background);
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--cpalettemedium);
   border-radius: 8px;
   padding: 18px 32px 18px 32px;
   position: relative;
