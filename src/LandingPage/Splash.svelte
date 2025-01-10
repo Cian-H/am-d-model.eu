@@ -1,5 +1,6 @@
 <script>
     import "./Splash.scss";
+    import Button from "../shared_components/Button.svelte";
 </script>
 
 <div class="splash">
@@ -18,8 +19,11 @@
             the collaboration and innovation that will build the future of this
             technology.
         </div>
-        <div class="splash-button">
-            <div class="splash-get-involved">Get Involved!</div>
-        </div>
+        <Button
+            class="splash-button"
+            text="Get Involved!"
+            inner_class="splash-get-involved"
+            hotkey="g"
+        />
     </div>
 </div>
