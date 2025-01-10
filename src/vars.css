@@ -9,9 +9,9 @@
     --cpalettecomplimentary: #ffffff;
 
     /* For the navigation header on the landing page */
-    --navigation-header-link-font-family: "Assistant", sans-serif;
-    --navigation-header-link-font-size: 24px;
-    --navigation-header-link-font-weight: 700;
+    --navigation-header-font-family: "Assistant", sans-serif;
+    --navigation-header-font-size: 24px;
+    --navigation-header-font-weight: 700;
     /* For the splash on the landing page */
     --splash-title-font-family: "Martel", sans-serif;
     --splash-title-font-size-large: 64px;

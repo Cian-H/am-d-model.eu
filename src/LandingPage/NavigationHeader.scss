@@ -18,10 +18,10 @@
 
 .navigation-header-link {
   color: var(--cpalettelight);
+  font-family: var(--navigation-header-font-family);
   text-align: left;
-  font-family: var(--navigation-header-link-font-family);
-  font-size: var(--navigation-header-link-font-size);
-  font-weight: var(--navigation-header-link-font-weight);
+  font-size: var(--navigation-header-font-size);
+  font-weight: var(--navigation-header-font-weight);
   text-decoration: underline;
   position: relative;
   display: flex;
@@ -44,7 +44,7 @@
       0px 1px 2px 0px rgba(0, 0, 0, 0.05));
 }
 
-.navigation-header-contact-us {
+.navigation-header-button-text {
   @extend .navigation-header-link;
   color: var(--background);
   text-decoration: none;

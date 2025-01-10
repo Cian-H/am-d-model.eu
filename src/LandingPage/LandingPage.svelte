@@ -1,6 +1,7 @@
 <script>
     import "./LandingPage.scss";
     import NavigationHeader from "../shared_components/NavigationHeader.svelte";
+    import "./NavigationHeader.scss";
     import NavigationFooter from "../shared_components/NavigationFooter.svelte";
     import Splash from "./Splash.svelte";
     import InfoScroll from "./InfoScroll.svelte";
@@ -35,7 +36,13 @@
             />
         {/if}
         <div class="landing-zone">
-            <NavigationHeader />
+            <NavigationHeader
+                class="navigation-header"
+                items_class="navigation-header-items"
+                link_class="navigation-header-link"
+                button_class="navigation-header-button"
+                button_text_class="navigation-header-button-text"
+            />
             <Splash />
         </div>
     </div>
