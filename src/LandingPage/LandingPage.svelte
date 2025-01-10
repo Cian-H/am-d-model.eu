@@ -10,15 +10,15 @@
     let className = "";
     export { className as class };
 
-    let useVideo = true;
+    let use_video = true;
     function handleVideoError() {
-        useVideo = false;
+        use_video = false;
     }
 </script>
 
 <div class={"landing-page " + className}>
     <div class="landing-zone-outer">
-        {#if useVideo}
+        {#if use_video}
             <video
                 class="background"
                 autoplay
@@ -42,6 +42,7 @@
                 link_class="navigation-header-link"
                 button_class="navigation-header-button"
                 button_text_class="navigation-header-button-text"
+                display_title={false}
             />
             <Splash />
         </div>
