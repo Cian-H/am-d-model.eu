@@ -1,10 +1,10 @@
 <script>
     import "./LandingPage.scss";
-    import NavigationHeader from "./NavigationHeader.svelte";
+    import NavigationHeader from "../shared_components/NavigationHeader.svelte";
+    import NavigationFooter from "../shared_components/NavigationFooter.svelte";
     import Splash from "./Splash.svelte";
     import InfoScroll from "./InfoScroll.svelte";
     import BottomCall from "./BottomCall.svelte";
-    import NavigationFooter from "./NavigationFooter.svelte";
 
     let className = "";
     export { className as class };
