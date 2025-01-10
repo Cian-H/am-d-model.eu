@@ -18,6 +18,8 @@
         {#if use_video}
             <video
                 class="background"
+                preload="auto"
+                poster="landing.webp"
                 autoplay
                 muted
                 playsinline
