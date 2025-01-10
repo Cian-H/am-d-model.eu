@@ -1,5 +1,7 @@
 <script>
     import "./NavigationFooter.scss";
+    import "../shared_components/ScrollToTop.svelte";
+    import ScrollToTop from "../shared_components/ScrollToTop.svelte";
 </script>
 
 <div class="navigation-footer">
@@ -37,7 +39,10 @@
         </div>
     </div>
     <div class="navigation-footer-column-mid">
-        <div class="navigation-footer-return">↥↥↥ Return to top ↥↥↥</div>
+        <ScrollToTop
+            class="navigation-footer-return"
+            text="↥↥↥ Return to top ↥↥↥"
+        />
     </div>
     <div class="navigation-footer-column-right">
         <div class="navigation-footer-topic-column">
