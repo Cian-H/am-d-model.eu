@@ -8,23 +8,41 @@
     import "$lib/styles/NavigationHeader.scss";
     import Button from "$lib/components/Button.svelte";
     import Link from "$lib/components/Link.svelte";
+
+    import { navigation } from "$lib/navigation";
 </script>
 
 <div class={$$props.class}>
     <div class="navigation-header-items-outer">
         <div class="flexrow-right {items_class}">
-            <Link class={link_class} text="Data Repository" hotkey="d" />
-            <Link class={link_class} text="How to Contribute" hotkey="h" />
+            <Link
+                class={link_class}
+                text="Data Repository"
+                hotkey="d"
+                redirectFunc={navigation.to404}
+            />
+            <Link
+                class={link_class}
+                text="How to Contribute"
+                hotkey="h"
+                redirectFunc={navigation.toAbout}
+            />
             <Button
                 class={button_class}
                 text="Contact Us"
                 inner_class={button_text_class}
                 hotkey="c"
+                redirectFunc={navigation.toContact}
             />
         </div>
         {#if display_title}
             <div class="flexrow-left {items_class}">
-                <div class="navigation-header-site-name">AM-D-Model.eu</div>
+                <Link
+                    class="navigation-header-site-name"
+                    text="AM-D-Model.eu"
+                    hotkey="a"
+                    redirectFunc={navigation.toHome}
+                />
             </div>
         {/if}
     </div>

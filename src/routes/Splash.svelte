@@ -1,6 +1,8 @@
 <script>
     import "./Splash.scss";
     import Button from "$lib/components/Button.svelte";
+
+    import { navigation } from "$lib/navigation";
 </script>
 
 <div class="splash">
@@ -24,6 +26,7 @@
             text="Get Involved!"
             inner_class="splash-get-involved"
             hotkey="g"
+            redirectFunc={navigation.toAbout}
         />
     </div>
 </div>

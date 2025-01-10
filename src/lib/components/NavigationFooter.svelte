@@ -2,11 +2,18 @@
     import "$lib/styles/NavigationFooter.scss";
     import ScrollToTop from "$lib/components/ScrollToTop.svelte";
     import Link from "$lib/components/Link.svelte";
+
+    import { navigation } from "$lib/navigation";
 </script>
 
 <div class="navigation-footer">
     <div class="navigation-footer-column-left">
-        <div class="navigation-footer-site-name">AM-D-Model.eu</div>
+        <Link
+            class="navigation-footer-site-name"
+            text="AM-D-Model.eu"
+            hotkey="a"
+            redirectFunc={navigation.toHome}
+        />
         <div class="navigation-footer-social-media">
             <div class="navigation-footer-buttons-icon">
                 <img
@@ -51,13 +58,20 @@
                 class="navigation-footer-link"
                 text="Data Repository"
                 hotkey="d"
+                redirectFunc={navigation.to404}
             />
             <Link
                 class="navigation-footer-link"
                 text="How to Contribute"
                 hotkey="h"
+                redirectFunc={navigation.toAbout}
             />
-            <Link class="navigation-footer-link" text="Contact us" hotkey="c" />
+            <Link
+                class="navigation-footer-link"
+                text="Contact us"
+                hotkey="c"
+                redirectFunc={navigation.toContact}
+            />
         </div>
     </div>
 </div>
