@@ -7,16 +7,13 @@
     import InfoScroll from "./InfoScroll.svelte";
     import BottomCall from "./BottomCall.svelte";
 
-    let className = "";
-    export { className as class };
-
     let use_video = true;
     function handleVideoError() {
         use_video = false;
     }
 </script>
 
-<div class={"landing-page " + className}>
+<div class={"landing-page"}>
     <div class="landing-zone-outer">
         {#if use_video}
             <video
@@ -51,4 +48,3 @@
     <BottomCall />
     <NavigationFooter />
 </div>
-
