@@ -4,8 +4,8 @@
     export let button_class;
     export let button_text_class;
 
-    import Button from "../shared_components/Button.svelte";
-    import Link from "../shared_components/Link.svelte";
+    import Button from "./Button.svelte";
+    import Link from "./Link.svelte";
 </script>
 
 <div class={$$props.class}>

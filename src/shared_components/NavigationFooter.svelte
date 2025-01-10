@@ -1,7 +1,8 @@
 <script>
     import "./NavigationFooter.scss";
     import "../shared_components/ScrollToTop.svelte";
-    import ScrollToTop from "../shared_components/ScrollToTop.svelte";
+    import ScrollToTop from "./ScrollToTop.svelte";
+    import Link from "./Link.svelte";
 </script>
 
 <div class="navigation-footer">
@@ -47,9 +48,17 @@
     <div class="navigation-footer-column-right">
         <div class="navigation-footer-topic-column">
             <div class="navigation-footer-topic">Topic</div>
-            <div class="navigation-footer-link">Data Repository</div>
-            <div class="navigation-footer-link">How to Contribute</div>
-            <div class="navigation-footer-link">Contact Us</div>
+            <Link
+                class="navigation-footer-link"
+                text="Data Repository"
+                hotkey="d"
+            />
+            <Link
+                class="navigation-footer-link"
+                text="How to Contribute"
+                hotkey="h"
+            />
+            <Link class="navigation-footer-link" text="Contact us" hotkey="c" />
         </div>
     </div>
 </div>
