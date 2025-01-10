@@ -1,8 +1,8 @@
 <script>
     import "./LandingPage.scss";
-    import NavigationHeader from "../shared_components/NavigationHeader.svelte";
+    import NavigationHeader from "$lib/components/NavigationHeader.svelte";
     import "./NavigationHeader.scss";
-    import NavigationFooter from "../shared_components/NavigationFooter.svelte";
+    import NavigationFooter from "$lib/components/NavigationFooter.svelte";
     import Splash from "./Splash.svelte";
     import InfoScroll from "./InfoScroll.svelte";
     import BottomCall from "./BottomCall.svelte";

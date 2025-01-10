@@ -1,8 +1,7 @@
 <script>
-    import "./NavigationFooter.scss";
-    import "../shared_components/ScrollToTop.svelte";
-    import ScrollToTop from "./ScrollToTop.svelte";
-    import Link from "./Link.svelte";
+    import "$lib/styles/NavigationFooter.scss";
+    import ScrollToTop from "$lib/components/ScrollToTop.svelte";
+    import Link from "$lib/components/Link.svelte";
 </script>
 
 <div class="navigation-footer">

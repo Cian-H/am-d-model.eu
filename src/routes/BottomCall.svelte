@@ -1,6 +1,6 @@
 <script>
     import "./BottomCall.scss";
-    import Button from "../shared_components/Button.svelte";
+    import Button from "$lib/components/Button.svelte";
 </script>
 
 <div class="btmcall">

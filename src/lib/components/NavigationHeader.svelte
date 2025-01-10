@@ -5,9 +5,9 @@
     export let button_text_class;
     export let display_title = true;
 
-    import "./NavigationHeader.scss";
-    import Button from "./Button.svelte";
-    import Link from "./Link.svelte";
+    import "$lib/styles/NavigationHeader.scss";
+    import Button from "$lib/components/Button.svelte";
+    import Link from "$lib/components/Link.svelte";
 </script>
 
 <div class={$$props.class}>
