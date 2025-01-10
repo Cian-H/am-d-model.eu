@@ -34,11 +34,11 @@
         {/if}
         <div class="landing-zone">
             <NavigationHeader
-                class="navigation-header"
-                items_class="navigation-header-items"
-                link_class="navigation-header-link"
-                button_class="navigation-header-button"
-                button_text_class="navigation-header-button-text"
+                class="landing-navigation-header"
+                items_class="landing-navigation-header-items"
+                link_class="landing-navigation-header-link"
+                button_class="landing-navigation-header-button"
+                button_text_class="landing-navigation-header-button-text"
                 display_title={false}
             />
             <Splash />
