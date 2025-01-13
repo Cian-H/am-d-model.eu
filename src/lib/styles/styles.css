@@ -33,12 +33,17 @@ h1 {
     padding-bottom: 18px;
 }
 
-h2 {
+h2,
+label {
     font-family: "Assistant";
     color: #828282;
     font-size: 32pt;
     padding-bottom: 12px;
     line-height: 1.5;
+}
+
+label {
+    font-size: 1.75rem;
 }
 
 p {

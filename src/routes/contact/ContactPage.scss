@@ -46,3 +46,13 @@
   max-width: var(--contact-img-size);
   max-height: var(--contact-img-size);
 }
+
+@media (orientation: landscape) and (min-width: 1200px) {
+  .contact-form-column {
+    width: 67%;
+  }
+
+  .infscr-row-reverse {
+    width: 33%;
+  }
+}
