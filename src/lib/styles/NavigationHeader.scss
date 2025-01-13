@@ -1,4 +1,11 @@
 .navigation-header {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.navigation-header {
   position: relative;
   height: 128px;
   width: 100%;
@@ -46,13 +53,6 @@
   text-decoration: none;
 }
 
-.navigation-header-items-outer {
-  display: flex;
-  flex-direction: row-reverse;
-  width: 100%;
-  justify-content: space-between;
-}
-
 .navigation-header-site-name {
   color: #000000;
   text-align: left;
@@ -74,8 +74,8 @@
   justify-content: flex-start;
 }
 
-@media (max-width: 720px) {
-  .navigation-header-items-outer {
+@media (max-width: 750px) {
+  .navigation-header-items {
     display: none;
   }
 }

@@ -1,54 +1,48 @@
-.landing-navigation-header {
+.splash-navigation-header {
   position: relative;
   height: 128px;
   width: 100%;
   padding-bottom: 120px;
-}
 
-.landing-navigation-header-items {
-  gap: 48px;
-  align-items: center;
-  position: relative;
-  padding-top: 28px;
-  padding-right: 96px;
-}
+  .navigation-header-items {
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    padding-top: 28px;
+    padding-right: 96px;
+  }
 
-.landing-navigation-header-link {
-  color: var(--cpalettelight);
-  font-family: var(--navigation-header-font-family);
-  text-align: left;
-  font-size: var(--navigation-header-font-size);
-  font-weight: var(--navigation-header-font-weight);
-  text-decoration: underline;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
+  .navigation-header-link {
+    color: var(--cpalettelight);
+    font-family: var(--navigation-header-font-family);
+    text-align: left;
+    font-size: var(--navigation-header-font-size);
+    font-weight: var(--navigation-header-font-weight);
+    text-decoration: underline;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 
-.landing-navigation-header-button {
-  background: var(--cpalettelight);
-  border-radius: 8px;
-  padding: 14px 24px 14px 24px;
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  position: relative;
-  box-shadow: var(--button-shadow-box-shadow,
-      0px 1px 2px 0px rgba(0, 0, 0, 0.05));
-}
+  .navigation-header-button {
+    background: var(--cpalettelight);
+    border-radius: 8px;
+    padding: 14px 24px 14px 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: var(--button-shadow-box-shadow,
+        0px 1px 2px 0px rgba(0, 0, 0, 0.05));
+  }
 
-.landing-navigation-header-button-text {
-  @extend .landing-navigation-header-link;
-  color: var(--background);
-  text-decoration: none;
-}
-
-@media (max-width: 720px) {
-  .landing-navigation-header {
-    display: none;
+  .navigation-header-button-text {
+    @extend .navigation-header-link;
+    color: var(--background);
+    text-decoration: none;
   }
 }

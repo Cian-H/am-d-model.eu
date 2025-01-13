@@ -13,7 +13,7 @@
 </script>
 
 <div class={$$props.class}>
-    <div class="navigation-header-items-outer">
+    <div class="navigation-header">
         <div class="flexrow-right navigation-header-items {items_class}">
             <Link
                 class="navigation-header-link {link_class}"
