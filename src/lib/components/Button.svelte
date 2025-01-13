@@ -5,11 +5,7 @@
     export let hotkey = "";
 
     function handleKeypress(event) {
-        if (
-            event.key === hotkey ||
-            event.key === "Enter" ||
-            event.key === " "
-        ) {
+        if (event.key === hotkey) {
             event.preventDefault();
             redirectFunc();
         }
@@ -18,9 +14,9 @@
 
 <div
     class="cursor-pointer select-none {$$props.class}"
-    style="cursor: pointer;"
+    style="cursor:pointer"
     on:click={redirectFunc}
-    on:keydown={handleKeypress}
+    on:keypress={handleKeypress}
     tabindex="0"
     role="button"
 >
