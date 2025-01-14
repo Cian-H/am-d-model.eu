@@ -22,4 +22,6 @@ RUN bunx vite build
 RUN mkdir -p /var/www/site/
 RUN mv ./build/* /var/www/site/
 
+EXPOSE 3000
+
 ENTRYPOINT ["bun", "/var/www/site/index.js"]
