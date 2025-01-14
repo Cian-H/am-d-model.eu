@@ -1,0 +1,14 @@
+version: 1.0
+build:
+  commands:
+    pre-build:
+      - curl -L "https://github.com/docker/compose/releases/download/v2.23.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      - chmod +x /usr/local/bin/docker-compose
+    build:
+      - docker-compose build
+run:
+  runtime: guest
+  command: docker-compose up
+  network:
+    port: 8080
+    protocol: tcp
