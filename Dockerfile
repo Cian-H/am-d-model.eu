@@ -1,5 +1,7 @@
 FROM quay.io/almalinuxorg/almalinux:latest
 
+LABEL name="am-d-model-site"
+
 ENV NODE_ENV="production"
 
 RUN dnf upgrade --assumeyes
