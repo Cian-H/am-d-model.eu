@@ -1,4 +1,4 @@
-FROM almalinux:latest
+FROM quay.io/almalinuxorg/almalinux:latest
 
 ENV NODE_ENV="production"
 
