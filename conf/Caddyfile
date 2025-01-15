@@ -1,3 +1,7 @@
+{
+    admin off
+}
+
 am-d-model.eu {
-    reverse_proxy site:3000
+    reverse_proxy localhost:3000
 }
