@@ -13,7 +13,7 @@ ENV PATH="/root/.bun/bin:${PATH}"
 RUN mkdir /src
 WORKDIR /src
 
-RUN git clone https://github.com/Cian-H/am-d-model.eu.git
+RUN git clone --branch prod https://github.com/Cian-H/am-d-model.eu.git
 WORKDIR /src/am-d-model.eu
 RUN bun install
 RUN bun pm trust --all
