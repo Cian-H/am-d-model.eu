@@ -3,5 +3,5 @@
 }
 
 am-d-model.eu {
-    reverse_proxy localhost:3000
+    reverse_proxy AM-D-Model_site:3000
 }
