@@ -3,6 +3,8 @@
     import NavigationHeader from "$lib/components/NavigationHeader.svelte";
     import NavigationFooter from "$lib/components/NavigationFooter.svelte";
     import ContactForm from "$lib/components/ContactForm.svelte";
+
+    import { assets } from "$app/paths";
 </script>
 
 <div class="contact-page">
@@ -23,7 +25,7 @@
         <div class="contact-image-column">
             <img
                 class="contact-image"
-                src="contact.webp"
+                src="{assets}/contact.webp"
                 alt="A photograph of our lovely colleague who is eager to hear from you"
             />
         </div>

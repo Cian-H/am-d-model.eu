@@ -7,6 +7,8 @@
     import "./LandingPage.scss";
     import "./NavigationHeader.scss";
 
+    import { assets } from "$app/paths";
+
     let use_video = true;
     function handleVideoError() {
         use_video = false;
@@ -19,18 +21,18 @@
             <video
                 class="background"
                 preload="auto"
-                poster="landing.webp"
+                poster="{assets}/landing.webp"
                 autoplay
                 muted
                 playsinline
                 on:error={handleVideoError}
             >
-                <source src="landing.webm" type="video/webm" />
+                <source src="{assets}/landing.webm" type="video/webm" />
             </video>
         {:else}
             <img
                 class="background"
-                src="landing.webp"
+                src="{assets}/landing.webp"
                 alt="Landing background of L-PBF print in progress"
             />
         {/if}

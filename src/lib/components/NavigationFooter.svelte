@@ -4,6 +4,7 @@
     import Link from "$lib/components/Link.svelte";
 
     import { navigation } from "$lib/navigation";
+    import { assets } from "$app/paths";
 </script>
 
 <div class="navigation-footer">
@@ -18,28 +19,28 @@
             <div class="navigation-footer-buttons-icon">
                 <img
                     class="navigation-footer-social-icon"
-                    src="facebook.svg"
+                    src="{assets}/facebook.svg"
                     alt="Grey Facebook icon"
                 />
             </div>
             <div class="navigation-footer-buttons-icon">
                 <img
                     class="navigation-footer-social-icon"
-                    src="linkedin.svg"
+                    src="{assets}/linkedin.svg"
                     alt="Grey LinkedIn icon"
                 />
             </div>
             <div class="navigation-footer-buttons-icon">
                 <img
                     class="navigation-footer-social-icon"
-                    src="youtube.svg"
+                    src="{assets}/youtube.svg"
                     alt="Grey YouTube icon"
                 />
             </div>
             <div class="navigation-footer-buttons-icon">
                 <img
                     class="navigation-footer-social-icon"
-                    src="instagram.svg"
+                    src="{assets}/instagram.svg"
                     alt="Grey Instagram icon"
                 />
             </div>

@@ -7,6 +7,9 @@ const config = {
         postcss: true,
     }),
     kit: {
+        paths: {
+            assets: 'https://dxx34o0ozp8j.cloudfront.net'
+        },
         adapter: adapter({
             out: 'build',
             precompress: true, // Pre-compresses files
