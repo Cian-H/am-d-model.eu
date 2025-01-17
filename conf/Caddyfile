@@ -1,7 +1,0 @@
-{
-    admin off
-}
-
-am-d-model.eu {
-    reverse_proxy AM-D-Model_site:3000
-}
