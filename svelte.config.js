@@ -16,6 +16,7 @@ const config = {
             polyfill: true
         }),
         prerender: {
+            entries: ['*'],
             handleMissingId: 'warn'
         },
         csp: {
