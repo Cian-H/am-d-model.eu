@@ -9,7 +9,7 @@
 
 <div class="contact-page">
     <NavigationHeader />
-    <div class="content">
+    <div class="contact-content">
         <div class="contact-form-column">
             <h1>Contact Us</h1>
             <h2>We look forward to hearing from you!</h2>

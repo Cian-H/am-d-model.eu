@@ -12,7 +12,7 @@
   flex-direction: column;
 }
 
-.content {
+.contact-content {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -50,5 +50,20 @@
 @media (orientation: landscape) and (min-width: 1200px) {
   .contact-form-column {
     width: 67%;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 1080px) {
+  .contact-content {
+    flex-direction: column-reverse;
+  }
+
+  .contact-form-column {
+    width: 100%;
+  }
+
+  .contact-image-column {
+    width: 100%;
+    justify-content: center;
   }
 }
