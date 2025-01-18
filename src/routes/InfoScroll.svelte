@@ -1,7 +1,7 @@
 <script>
     import "./InfoScroll.scss";
 
-    import { assets } from "$app/paths";
+    import { CDN } from "$lib/constants";
 </script>
 
 <div class="infscr">
@@ -9,7 +9,7 @@
         <div class="infscr-image-div">
             <img
                 class="infscr-image"
-                src="{assets}/buildplate.webp"
+                src="{CDN}/buildplate.webp"
                 alt="An L-PBF buildplate after a successful print"
             />
         </div>
@@ -45,7 +45,7 @@
         <div class="infscr-image-div">
             <img
                 class="infscr-image"
-                src="{assets}/data.webp"
+                src="{CDN}/data.webp"
                 alt="A dashboard featuring L-PBF thermographic analyses"
             />
         </div>
@@ -84,7 +84,7 @@
         <div class="infscr-image-div">
             <img
                 class="infscr-image"
-                src="{assets}/openscience.webp"
+                src="{CDN}/openscience.webp"
                 alt="A render of the open science logo with a modified color palette"
             />
         </div>

@@ -7,7 +7,7 @@
     import "./LandingPage.scss";
     import "./NavigationHeader.scss";
 
-    import { assets } from "$app/paths";
+    import { CDN } from "$lib/constants";
 
     let use_video = true;
     function handleVideoError() {
@@ -21,18 +21,18 @@
             <video
                 class="background"
                 preload="auto"
-                poster="{assets}/landing.webp"
+                poster="{CDN}/landing.webp"
                 autoplay
                 muted
                 playsinline
                 on:error={handleVideoError}
             >
-                <source src="{assets}/landing.webm" type="video/webm" />
+                <source src="{CDN}/landing.webm" type="video/webm" />
             </video>
         {:else}
             <img
                 class="background"
-                src="{assets}/landing.webp"
+                src="{CDN}/landing.webp"
                 alt="Landing background of L-PBF print in progress"
             />
         {/if}
