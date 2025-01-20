@@ -5,6 +5,9 @@
     import ContactForm from "$lib/components/ContactForm.svelte";
 
     import { CDN } from "$lib/constants";
+
+    const EMAIL_ENDPOINT =
+        "https://bst564m4ws3ouxg27nqrpfqv5a0jbhxi.lambda-url.eu-west-1.on.aws/";
 </script>
 
 <div class="contact-page">
@@ -20,7 +23,10 @@
                 community. Please use the form below to email our corresponding
                 researcher and they will reply as soon as they are able.
             </p>
-            <ContactForm class="contact-form" />
+            <ContactForm
+                class="contact-form"
+                emailEndpointApi={EMAIL_ENDPOINT}
+            />
         </div>
         <div class="contact-image-column">
             <img

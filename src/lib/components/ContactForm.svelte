@@ -2,6 +2,8 @@
     import { Send, Loader2 } from "lucide-svelte";
     import "$lib/styles/ContactForm.scss";
 
+    export let emailEndpointApi;
+
     let formData = {
         name: "",
         email: "",
@@ -33,19 +35,55 @@
         if (!validateForm()) return;
 
         isSubmitting = true;
-        // Simulate API call - replace with your actual API endpoint
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-        isSubmitting = false;
-        submitted = true;
-
-        // Reset form
-        formData = {
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-        };
+        await new Promise(async (resolve, reject) => {
+            try {
+                await dispatch_email(
+                    formData.name,
+                    formData.email,
+                    formData.subject,
+                    formData.message,
+                );
+                submitted = true;
+                // Reset form
+                formData = {
+                    name: "",
+                    email: "",
+                    subject: "",
+                    message: "",
+                };
+                resolve();
+            } catch (error) {
+                console.error("Error:", error);
+                reject(error);
+            } finally {
+                isSubmitting = false;
+            }
+        });
     };
+
+    async function dispatch_email(name, email, subject, message) {
+        try {
+            const response = await fetch(emailEndpointApi, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    subject,
+                    message,
+                }),
+            });
+
+            if (!response.ok) throw new Error("Failed to send message");
+
+            // Handle success (clear form, show success message, etc.)
+        } catch (error) {
+            // Handle error
+            console.error("Error:", error);
+        }
+    }
 
     const handleInput = (e) => {
         const target = e.target;
