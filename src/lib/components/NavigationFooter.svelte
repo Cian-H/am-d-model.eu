@@ -58,7 +58,7 @@
                 class="navigation-footer-link"
                 text="Data Repository"
                 hotkey="d"
-                redirectFunc={navigation.to404}
+                redirectFunc={navigation.toRepository}
             />
             <Link
                 class="navigation-footer-link"

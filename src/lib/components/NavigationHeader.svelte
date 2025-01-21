@@ -19,7 +19,7 @@
                 class="navigation-header-link {link_class}"
                 text="Data Repository"
                 hotkey="d"
-                redirectFunc={navigation.to404}
+                redirectFunc={navigation.toRepository}
             />
             <Link
                 class="navigation-header-link {link_class}"
