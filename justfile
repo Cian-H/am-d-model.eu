@@ -14,7 +14,7 @@ update:
         echo "Update already in progress"
     fi
 
-merge_and_push_prod:
+merge-and-push-prod:
     #!/usr/bin/env bash
     git switch prod
     git merge main
