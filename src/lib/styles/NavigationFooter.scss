@@ -73,7 +73,8 @@
 }
 
 .navigation-footer-social-media {
-  display: flex;
+  // display: flex; # temporarily disable
+  display: none;
   flex-direction: row;
   gap: var(--spacing-xs, 8px);
   align-items: flex-start;
