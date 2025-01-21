@@ -1,6 +1,6 @@
 update:
     #!/usr/bin/env bash
-    if [ ! -f update.lock ] then
+    if [ ! -f update.lock ]; then
         touch update.lock
         just tag-version
         docker compose down
