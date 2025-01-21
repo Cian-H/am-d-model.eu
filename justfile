@@ -1,12 +1,21 @@
 update:
-    just tag-version
-    docker compose down
-    git pull
-    docker compose pull
-    docker compose build --no-cache
-    docker compose up -d
+    #!/usr/bin/env bash
+    if ssh am-d-model_eu "[ ! -f update.lock ]"; then
+        touch update.lock
+        just tag-version
+        docker compose down
+        git pull
+        docker compose pull
+        docker compose build --no-cache
+        docker compose up -d
+        rm update.lock
+        just healthcheck || just rollback
+    else
+        echo "Update already in progress"
+    fi
 
 merge_and_push_prod:
+    #!/usr/bin/env bash
     git switch prod
     git merge main
     git switch main
@@ -14,17 +23,11 @@ merge_and_push_prod:
 
 remote-update:
     #!/usr/bin/env bash
-    if ssh am-d-model_eu "[ ! -f /tmp/update.lock ]"; then
-        ssh am-d-model_eu "touch /tmp/update.lock"
-        just merge_and_push_prod
-        ssh am-d-model_eu "cd am-d-model.eu && just update"
-        ssh am-d-model_eu "rm /tmp/update.lock"
-        ssh am-d-model_eu "just healthcheck || just rollback"
-    else
-        echo "Update already in progress"
-    fi
+    just merge_and_push_prod
+    ssh am-d-model_eu "cd am-d-model.eu && just update"
 
 tag-version:
+    #!/usr/bin/env bash
     git tag backup-$(date +%Y%m%d-%H%M%S)
     mkdir -p versions
     docker compose images | grep -v "REPOSITORY" > versions/$(date +%Y%m%d-%H%M%S).txt
