@@ -29,11 +29,18 @@
             />
         </div>
         <div class="contact-image-column">
-            <img
-                class="contact-image"
-                src="{CDN}/contact.webp"
-                alt="A photograph of our lovely colleague who is eager to hear from you"
-            />
+            <div class="contact-image-pane hover:bg-blue-200">
+                <img
+                    class="contact-image"
+                    src="{CDN}/contact.webp"
+                    alt="A photograph of our lovely colleague who is eager to hear from you"
+                />
+                <a href="mailto:dermot.brabazon@dcu.ie"
+                    ><p class="contact-image-subtitle">
+                        ✉ Dermot Brabazon (dermot.brabazon@dcu.ie)
+                    </p></a
+                >
+            </div>
         </div>
     </div>
     <NavigationFooter />
