@@ -1,6 +1,6 @@
 update:
     #!/usr/bin/env bash
-    if ssh am-d-model_eu "[ ! -f update.lock ]"; then
+    if [ ! -f update.lock ] then
         touch update.lock
         just tag-version
         docker compose down
