@@ -23,7 +23,7 @@ merge-and-push-prod:
 
 remote-update:
     #!/usr/bin/env bash
-    just merge_and_push_prod
+    just merge-and-push-prod
     ssh am-d-model_eu "cd am-d-model.eu && just update"
 
 tag-version:
