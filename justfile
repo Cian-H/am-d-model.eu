@@ -14,12 +14,12 @@ merge_and_push_prod:
 
 remote-update:
     #!/usr/bin/env bash
-    if ssh server "[ ! -f /tmp/update.lock ]"; then
-        ssh server "touch /tmp/update.lock"
+    if ssh am-d-model_eu "[ ! -f /tmp/update.lock ]"; then
+        ssh am-d-model_eu "touch /tmp/update.lock"
         just merge_and_push_prod
-        ssh server "cd am-d-model.eu && just update"
-        ssh server "rm /tmp/update.lock"
-        ssh server "just healthcheck || just rollback"
+        ssh am-d-model_eu "cd am-d-model.eu && just update"
+        ssh am-d-model_eu "rm /tmp/update.lock"
+        ssh am-d-model_eu "just healthcheck || just rollback"
     else
         echo "Update already in progress"
     fi
