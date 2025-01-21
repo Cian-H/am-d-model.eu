@@ -6,8 +6,8 @@ update:
         docker compose down
         git pull
         docker compose pull
-        docker compose build --no-cache
-        docker compose up -d
+        docker compose build
+        docker compose up -d --wait
         rm update.lock
         just healthcheck || just rollback
     else
