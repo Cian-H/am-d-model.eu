@@ -7,6 +7,9 @@ const config = {
         postcss: true,
     }),
     kit: {
+        paths: {
+            exclude: ['/repo']
+        },
         adapter: adapter({
             out: 'build',
             precompress: true, // Pre-compresses files
