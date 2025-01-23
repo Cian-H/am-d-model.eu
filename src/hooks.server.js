@@ -3,8 +3,8 @@ export const handle = async ({ event, resolve }) => {
     const proxyPaths = ["/repo"];
 
     if (proxyPaths.some(path => event.url.pathname.startsWith(path))) {
-        // Return empty response, letting proxy handle it
-        return new Response(null, { status: 444 });
+        // completely skip sveltekit routing
+        return;
     }
 
     // Let SvelteKit handle other paths

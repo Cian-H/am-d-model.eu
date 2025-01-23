@@ -12,6 +12,7 @@ const config = {
             precompress: true, // Pre-compresses files
             polyfill: true
         }),
+        csrf: { checkOrigin: false },
         prerender: {
             entries: ['*'],
             handleMissingId: 'warn'
