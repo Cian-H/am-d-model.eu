@@ -1,6 +1,6 @@
 export const handle = async ({ event, resolve }) => {
     // Paths to be handled by proxy
-    const proxyPaths = ["repo"];
+    const proxyPaths = ["/repo"];
 
     if (proxyPaths.some(path => event.url.pathname.startsWith(path))) {
         // Return empty response, letting proxy handle it
