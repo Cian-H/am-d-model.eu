@@ -3,8 +3,6 @@
     import Button from "$lib/components/Button.svelte";
 
     import { navigation } from "$lib/navigation";
-
-    console.log("Serving splash page");
 </script>
 
 <div class="splash">
