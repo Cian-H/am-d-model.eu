@@ -27,4 +27,5 @@ EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
   CMD curl -f http://localhost:3000/health || exit 1
 
-ENTRYPOINT ["bun", "/var/www/site/index.js"]
+# ENTRYPOINT ["bun", "/var/www/site/index.js"]
+ENTRYPOINT ["bun", "run", "dev"]
