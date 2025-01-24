@@ -9,7 +9,6 @@ const config = {
     kit: {
         paths: {
             base: '',
-            exclude: ['/repo']
         },
         adapter: adapter({
             out: 'build',
