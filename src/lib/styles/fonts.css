@@ -1,11 +1,111 @@
 @font-face {
     font-family: 'Martel';
-    src: url('https://fonts.cdnfonts.com/css/martel-2.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    src: local('Martel'), url('https://fonts.cdnfonts.com/s/15410/Martel-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Martel';
+    font-style: normal;
+    font-weight: 250;
+    src: local('Martel'), url('https://fonts.cdnfonts.com/s/15410/Martel-UltraLight.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Martel';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Martel'), url('https://fonts.cdnfonts.com/s/15410/Martel-Light.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Martel';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Martel'), url('https://fonts.cdnfonts.com/s/15410/Martel-DemiBold.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Martel';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Martel'), url('https://fonts.cdnfonts.com/s/15410/Martel-Bold.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Martel';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Martel'), url('https://fonts.cdnfonts.com/s/15410/Martel-ExtraBold.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Martel';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Martel'), url('https://fonts.cdnfonts.com/s/15410/Martel-Heavy.woff') format('woff');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Assistant';
-    src: url('https://fonts.cdnfonts.com/css/assistant.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    src: local('Assistant'), url('https://fonts.cdnfonts.com/s/15700/Assistant-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Assistant'), url('https://fonts.cdnfonts.com/s/15700/Assistant[wght].woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 275;
+    src: local('Assistant'), url('https://fonts.cdnfonts.com/s/15700/Assistant-ExtraLight.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Assistant'), url('https://fonts.cdnfonts.com/s/15700/Assistant-Light.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Assistant'), url('https://fonts.cdnfonts.com/s/15700/Assistant-SemiBold.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Assistant'), url('https://fonts.cdnfonts.com/s/15700/Assistant-Bold.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Assistant'), url('https://fonts.cdnfonts.com/s/15700/Assistant-ExtraBold.woff') format('woff');
     font-display: swap;
 }
