@@ -1,90 +1,90 @@
 .infscr {
-  width: 100%;
-  position: relative;
-  padding-top: var(--infscr-vpad);
-  padding-bottom: var(--infscr-vpad);
-  padding-left: var(--infscr-hpad);
-  padding-right: var(--infscr-hpad);
-  display: flex;
-  flex-direction: column;
-  gap: var(--infscr-cardgap-size);
+    width: 100%;
+    position: relative;
+    padding-top: var(--infscr-vpad);
+    padding-bottom: var(--infscr-vpad);
+    padding-left: var(--infscr-hpad);
+    padding-right: var(--infscr-hpad);
+    display: flex;
+    flex-direction: column;
+    gap: var(--infscr-cardgap-size);
 }
 
 .infscr-title {
-  color: var(--cpalettelight);
-  width: 100%;
-  text-align: left;
-  font-family: var(--infscr-title-font-family);
-  font-size: var(--infscr-title-font-size);
-  font-weight: var(--infscr-title-font-weight);
-  position: relative;
+    color: var(--cpalettelight);
+    width: 100%;
+    text-align: left;
+    font-family: var(--infscr-title-font-family);
+    font-size: var(--infscr-title-font-size);
+    font-weight: var(--infscr-title-font-weight);
+    position: relative;
 }
 
 .infscr-subtitle {
-  color: var(--cpalettelight);
-  text-align: left;
-  font-family: var(--infscr-subtitle-font-family);
-  font-size: var(--infscr-subtitle-font-size);
-  font-weight: var(--infscr-subtitle-font-weight);
-  position: relative;
-  padding-top: 8px;
+    color: var(--cpalettelight);
+    text-align: left;
+    font-family: var(--infscr-subtitle-font-family);
+    font-size: var(--infscr-subtitle-font-size);
+    font-weight: var(--infscr-subtitle-font-weight);
+    position: relative;
+    padding-top: 8px;
 }
 
 .infscr-body {
-  color: var(--cpalettecomplimentary);
-  text-align: left;
-  font-family: var(--infscr-body-font-family);
-  font-size: var(--infscr-body-font-size);
-  font-weight: var(--infscr-body-font-weight);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+    color: var(--cpalettecomplimentary);
+    text-align: left;
+    font-family: var(--infscr-body-font-family);
+    font-size: var(--infscr-body-font-size);
+    font-weight: var(--infscr-body-font-weight);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .infscr-image-div {
-  display: flex;
-  min-width: 50%;
-  justify-content: center;
+    display: flex;
+    min-width: 50%;
+    justify-content: center;
 }
 
 .infscr-image {
-  border-radius: var(--infscr-corner-round);
-  width: 100%;
-  max-width: var(--infscr-img-size);
-  max-height: var(--infscr-img-size);
-  position: relative;
+    border-radius: var(--infscr-corner-round);
+    width: 100%;
+    max-width: var(--infscr-img-size);
+    max-height: var(--infscr-img-size);
+    position: relative;
 }
 
 .infscr-row,
 .infscr-row-reverse {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: var(--infscr-cardgap-size);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: var(--infscr-cardgap-size);
 }
 
 @media (orientation: landscape) and (min-width: 1200px) {
-  .infscr-row {
-    flex-direction: row;
-  }
+    .infscr-row {
+        flex-direction: row;
+    }
 
-  .infscr-row-reverse {
-    flex-direction: row-reverse;
-  }
+    .infscr-row-reverse {
+        flex-direction: row-reverse;
+    }
 }
 
 .infscr-textcol {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  gap: var(--infscr-titlegap-size);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: var(--infscr-titlegap-size);
 }
 
 .infscr-subcol {
-  display: flex;
-  flex-direction: column;
-  gap: var(--infscr-textgap-size);
+    display: flex;
+    flex-direction: column;
+    gap: var(--infscr-textgap-size);
 }

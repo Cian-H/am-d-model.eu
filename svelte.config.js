@@ -1,5 +1,5 @@
 import preprocess from "svelte-preprocess";
-import adapter from '@sveltejs/adapter-node';
+import adapter from "@sveltejs/adapter-node";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,28 +8,28 @@ const config = {
     }),
     kit: {
         paths: {
-            base: '',
+            base: "",
         },
         adapter: adapter({
-            out: 'build',
+            out: "build",
             precompress: true, // Pre-compresses files
-            polyfill: true
+            polyfill: true,
         }),
         csrf: { checkOrigin: false },
         prerender: {
-            entries: ['*'],
-            handleMissingId: 'warn'
+            entries: ["*"],
+            handleMissingId: "warn",
         },
         csp: {
-            mode: 'auto',
+            mode: "auto",
             directives: {
-                'script-src': ['self']
-            }
+                "script-src": ["self"],
+            },
         },
         version: {
-            name: Date.now().toString()
-        }
-    }
+            name: Date.now().toString(),
+        },
+    },
 };
 
 export default config;

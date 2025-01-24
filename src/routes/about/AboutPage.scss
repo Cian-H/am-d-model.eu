@@ -1,17 +1,17 @@
 .about-page,
 .about-page * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .about-page {
-  background: var(--cpalettecomplimentary);
-  width: 100vw;
-  min-width: 250px;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
+    background: var(--cpalettecomplimentary);
+    width: 100vw;
+    min-width: 250px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
 }
 
 .copy {
-  padding: 5% 5% 5% 5%;
+    padding: 5% 5% 5% 5%;
 }

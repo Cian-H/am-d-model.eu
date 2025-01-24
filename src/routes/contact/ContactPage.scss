@@ -1,83 +1,83 @@
 .contact-page,
 .contact-page * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .contact-page {
-  background: var(--cpalettecomplimentary);
-  width: 100vw;
-  min-width: 250px;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
+    background: var(--cpalettecomplimentary);
+    width: 100vw;
+    min-width: 250px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-content {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding: 5% 5% 5% 5%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 5% 5% 5% 5%;
 }
 
 .contact-form-column {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
 
 .contact-form {
-  position: relative;
-  padding-top: 32px;
+    position: relative;
+    padding-top: 32px;
 }
 
 .contact-image-column {
-  position: relative;
-  width: 50%;
-  top: 0;
-  bottom: 0;
-  padding: 32px 0 32px 48px;
+    position: relative;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+    padding: 32px 0 32px 48px;
 }
 
 .contact-image-pane {
-  position: sticky;
-  border-radius: var(--contact-corner-round);
-  width: 100%;
-  top: 64px;
-  max-width: var(--contact-img-size);
-  justify-items: center;
+    position: sticky;
+    border-radius: var(--contact-corner-round);
+    width: 100%;
+    top: 64px;
+    max-width: var(--contact-img-size);
+    justify-items: center;
 }
 
 .contact-image {
-  border-radius: var(--contact-corner-round);
-  width: 100%;
-  max-width: var(--contact-img-size);
-  max-height: var(--contact-img-size);
+    border-radius: var(--contact-corner-round);
+    width: 100%;
+    max-width: var(--contact-img-size);
+    max-height: var(--contact-img-size);
 }
 
 .contact-image-subtitle {
-  font: "Assistant";
-  font-size: 24px;
-  color: #d9d9d9;
-  text-align: center;
+    font: "Assistant";
+    font-size: 24px;
+    color: #d9d9d9;
+    text-align: center;
 }
 
 @media (orientation: landscape) and (min-width: 1200px) {
-  .contact-form-column {
-    width: 67%;
-  }
+    .contact-form-column {
+        width: 67%;
+    }
 }
 
 @media (orientation: portrait) and (max-width: 1080px) {
-  .contact-content {
-    flex-direction: column-reverse;
-  }
+    .contact-content {
+        flex-direction: column-reverse;
+    }
 
-  .contact-form-column {
-    width: 100%;
-  }
+    .contact-form-column {
+        width: 100%;
+    }
 
-  .contact-image-column {
-    width: 100%;
-    justify-content: center;
-  }
+    .contact-image-column {
+        width: 100%;
+        justify-content: center;
+    }
 }

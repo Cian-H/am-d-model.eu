@@ -1,64 +1,65 @@
 .form-container {
+    input,
+    textarea {
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
 
-  input,
-  textarea {
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
 
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        &.error {
+            border-color: #ef4444;
+
+            &:focus {
+                box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+            }
+        }
     }
 
-    &.error {
-      border-color: #ef4444;
+    .submit-button {
+        width: auto;
+        padding: 0.5rem 1rem;
+        background-color: var(--background);
+        color: white;
+        border-radius: 0.375rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: background-color 0.2s ease;
 
-      &:focus {
-        box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
-      }
-    }
-  }
+        &:hover:not(:disabled) {
+            background-color: var(--cpalettemedium);
+        }
 
-  .submit-button {
-    width: auto;
-    padding: 0.5rem 1rem;
-    background-color: var(--background);
-    color: white;
-    border-radius: 0.375rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    transition: background-color 0.2s ease;
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
 
-    &:hover:not(:disabled) {
-      background-color: var(--cpalettemedium);
-    }
-
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        &:disabled {
+            background-color: #93c5fd;
+            cursor: not-allowed;
+        }
     }
 
-    &:disabled {
-      background-color: #93c5fd;
-      cursor: not-allowed;
-    }
-  }
-
-  // Add subtle animation for success message
-  .success-message {
-    animation: fadeIn 0.3s ease-in-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
+    // Add subtle animation for success message
+    .success-message {
+        animation: fadeIn 0.3s ease-in-out;
     }
 
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
-  }
 }
