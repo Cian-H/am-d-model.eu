@@ -7,9 +7,9 @@ export const navigation = {
     toAbout: () => goto("/about"),
     toContact: () => goto("/contact"),
     toRepository: () => {
-        logger.debug("Entering '/lib/navigation.js'.toRepository");
+        logger.info("Entering '/lib/navigation.js'.toRepository");
         goto("/repo");
-        logger.debug("Exiting '/lib/navigation.js'.toRepository");
+        logger.info("Exiting '/lib/navigation.js'.toRepository");
     },
     to404: () => {
         throw error(404, 'Page not found');
