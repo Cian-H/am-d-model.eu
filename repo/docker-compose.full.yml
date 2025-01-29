@@ -18,66 +18,66 @@
 # - Search platform: (OpenSearch) (exposed ports: 9200, 9600)
 # - OpenSearch Dashboard/Kibana (view OS/ES indexes) (exposed ports: 5601)
 #
-version: '2.2'
+version: "2.2"
 services:
-  cache:
-    extends:
-      file: docker-services.yml
-      service: cache
-  db:
-    extends:
-      file: docker-services.yml
-      service: db
-  mq:
-    extends:
-      file: docker-services.yml
-      service: mq
-  search:
-    extends:
-      file: docker-services.yml
-      service: search
-  s3:
-    extends:
-      file: docker-services.yml
-      service: s3
-  # UI Application
-  web-ui:
-    extends:
-      file: docker-services.yml
-      service: app
-    command: ["uwsgi /opt/invenio/var/instance/uwsgi_ui.ini"]
-    image: am-d-model-data-repository:latest
-    ports:
-      - "5000"
-    volumes:
-      - static_data:/opt/invenio/var/instance/static
+    cache:
+        extends:
+            file: docker-services.yml
+            service: cache
+    db:
+        extends:
+            file: docker-services.yml
+            service: db
+    mq:
+        extends:
+            file: docker-services.yml
+            service: mq
+    search:
+        extends:
+            file: docker-services.yml
+            service: search
+    s3:
+        extends:
+            file: docker-services.yml
+            service: s3
+    # UI Application
+    web-ui:
+        extends:
+            file: docker-services.yml
+            service: app
+        command: ["uwsgi /opt/invenio/var/instance/uwsgi_ui.ini"]
+        image: am-d-model-data-repository:latest
+        ports:
+            - "5000"
+        volumes:
+            - static_data:/opt/invenio/var/instance/static
 
-  # API Rest Application
-  web-api:
-    extends:
-      file: docker-services.yml
-      service: app
-    command: ["uwsgi /opt/invenio/var/instance/uwsgi_rest.ini"]
-    image: am-d-model-data-repository:latest
-    ports:
-      - "5000"
+    # API Rest Application
+    web-api:
+        extends:
+            file: docker-services.yml
+            service: app
+        command: ["uwsgi /opt/invenio/var/instance/uwsgi_rest.ini"]
+        image: am-d-model-data-repository:latest
+        ports:
+            - "5000"
 
-  # Worker
-  worker:
-    extends:
-      file: docker-services.yml
-      service: app
-    command: ["celery -A invenio_app.celery worker --beat --loglevel=INFO"]
-    image: am-d-model-data-repository:latest
-    depends_on:
-      search:
-        condition: service_started
-      cache:
-        condition: service_started
-      db:
-        condition: service_started
-      mq:
-        condition: service_started
+    # Worker
+    worker:
+        extends:
+            file: docker-services.yml
+            service: app
+        command: ["celery -A invenio_app.celery worker --beat --loglevel=INFO"]
+        image: am-d-model-data-repository:latest
+        depends_on:
+            search:
+                condition: service_started
+            cache:
+                condition: service_started
+            db:
+                condition: service_started
+            mq:
+                condition: service_started
 volumes:
     static_data:
     redis_data:
