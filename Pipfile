@@ -13,7 +13,7 @@ uwsgi = ">=2.0"
 uwsgitop = ">=0.11"
 uwsgi-tools = ">=1.1.1"
 flask-admin = "==1.6.1"
-tomli = "*"
+py-dotenv-safe = "*"
 
 [requires]
 python_version = "3.9"

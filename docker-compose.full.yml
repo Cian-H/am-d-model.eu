@@ -24,10 +24,14 @@ services:
     extends:
       file: docker-services.yml
       service: cache
+    networks:
+      - am-d-model-repo-network
   db:
     extends:
       file: docker-services.yml
       service: db
+    networks:
+      - am-d-model-repo-network
   mq:
     extends:
       file: docker-services.yml
@@ -36,10 +40,14 @@ services:
     extends:
       file: docker-services.yml
       service: search
+    networks:
+      - am-d-model-repo-network
   s3:
     extends:
       file: docker-services.yml
       service: s3
+    networks:
+      - am-d-model-repo-network
   # Frontend
   frontend:
     extends:
@@ -50,9 +58,11 @@ services:
     depends_on:
       - web-ui
       - web-api
-    ports:
-      - "80:80"
-      - "443:443"
+    # ports:
+    #   - "80:80"
+    #   - "443:443"
+    networks:
+      - am-d-model-repo-network
   # UI Application
   web-ui:
     extends:
@@ -64,6 +74,8 @@ services:
       - "5000"
     volumes:
       - static_data:/opt/invenio/var/instance/static
+    networks:
+      - am-d-model-repo-network
 
   # API Rest Application
   web-api:
@@ -74,6 +86,8 @@ services:
     image: am-d-model-data-repository:latest
     ports:
       - "5000"
+    networks:
+      - am-d-model-repo-network
 
   # Worker
   worker:
@@ -91,6 +105,12 @@ services:
         condition: service_started
       mq:
         condition: service_started
+    networks:
+      - am-d-model-repo-network
+networks:
+    am-d-model-repo-network:
+        name: am-d-model-repo-network
 volumes:
-  static_data:
-  data:
+    static_data:
+    data:
+    redis_data:
