@@ -24,15 +24,6 @@ services:
       - "INVENIO_RATELIMIT_STORAGE_URL=redis://cache:6379/3"
     networks:
       - am-d-model-repo-network
-  frontend:
-    build: ./docker/nginx/
-    image: am-d-model-data-repository-frontend
-    restart: "unless-stopped"
-    ports:
-      - "80"
-      - "443"
-    networks:
-      - am-d-model-repo-network
   cache:
     image: redis:7
     restart: "unless-stopped"

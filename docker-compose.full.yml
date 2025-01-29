@@ -48,21 +48,6 @@ services:
       service: s3
     networks:
       - am-d-model-repo-network
-  # Frontend
-  frontend:
-    extends:
-      file: docker-services.yml
-      service: frontend
-    volumes:
-      - static_data:/opt/invenio/var/instance/static
-    depends_on:
-      - web-ui
-      - web-api
-    # ports:
-    #   - "80:80"
-    #   - "443:443"
-    networks:
-      - am-d-model-repo-network
   # UI Application
   web-ui:
     extends:
