@@ -1,0 +1,133 @@
+version: '2.2'
+services:
+  app:
+    build:
+      context: ./
+      args:
+        - ENVIRONMENT=DEV
+    image: am-d-model-data-repository
+    restart: "unless-stopped"
+    env_file:
+      - .env
+    environment:
+      - "INVENIO_ACCOUNTS_SESSION_REDIS_URL=redis://cache:6379/1"
+      - "INVENIO_BROKER_URL=amqp://guest:guest@mq:5672/"
+      - "INVENIO_CACHE_REDIS_URL=redis://cache:6379/0"
+      - "INVENIO_CACHE_TYPE=redis"
+      - "INVENIO_CELERY_BROKER_URL=amqp://guest:guest@mq:5672/"
+      - "INVENIO_CELERY_RESULT_BACKEND=redis://cache:6379/2"
+      - "INVENIO_COMMUNITIES_IDENTITIES_CACHE_REDIS_URL=redis://cache:6379/4"
+      - "INVENIO_SEARCH_HOSTS=['search:9200']"
+      # - "INVENIO_SECRET_KEY=${aws secretsmanager get-secret-value --secret-id Invenio | jq '.SecretString | fromjson | .INVENIO_SECRET_KEY'}"
+      - "INVENIO_SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://am-d-model-data-repository:am-d-model-data-repository@db/am-d-model-data-repository"
+      - "INVENIO_WSGI_PROXIES=2"
+      - "INVENIO_RATELIMIT_STORAGE_URL=redis://cache:6379/3"
+    networks:
+      - am-d-model-repo-network
+  cache:
+    image: redis:7
+    restart: "unless-stopped"
+    # read_only: true
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - am-d-model-repo-network
+  db:
+    image: postgres:14.13
+    restart: "unless-stopped"
+    env_file:
+      - .env
+    environment:
+      - "POSTGRES_USER=am-d-model-data-repository"
+      # - "POSTGRES_PASSWORD=am-d-model-data-repository"
+      - "POSTGRES_DB=am-d-model-data-repository"
+    ports:
+      - "5432"
+    networks:
+      - am-d-model-repo-network
+  pgadmin:
+    image: dpage/pgadmin4:6
+    restart: "unless-stopped"
+    ports:
+      - "5050"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "repo@am-d-model.eu"
+      PGADMIN_DEFAULT_PASSWORD: "am-d-model-data-repository"
+    volumes:
+      - ./docker/pgadmin/servers.json:/pgadmin4/servers.json
+    networks:
+      - am-d-model-repo-network
+  mq:
+    image: rabbitmq:3-management
+    restart: "unless-stopped"
+    ports:
+      - "15672"
+      - "5672"
+    networks:
+      - am-d-model-repo-network
+  search:
+    image: opensearchproject/opensearch:2.17.1
+    restart: "unless-stopped"
+    # environment:
+    #   # settings only for development. DO NOT use in production!
+    #   - bootstrap.memory_lock=true
+    #   - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+    #   - "DISABLE_INSTALL_DEMO_CONFIG=true"
+    #   - "DISABLE_SECURITY_PLUGIN=true"
+    #   - "discovery.type=single-node"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    mem_limit: 2g
+    ports:
+      - "9200"
+      - "9600"
+    networks:
+      - am-d-model-repo-network
+  opensearch-dashboards:
+    image: opensearchproject/opensearch-dashboards:2.17.1
+    ports:
+      - "5601:5601"
+    expose:
+      - "5601"
+    # environment:
+    #   # settings only for development. DO NOT use in production!
+    #   - 'OPENSEARCH_HOSTS=["http://search:9200"]'
+    #   - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true"
+    networks:
+      - am-d-model-repo-network
+  s3:
+    image: minio/minio:RELEASE.2022-10-24T18-35-07Z
+    restart: "unless-stopped"
+    ports:
+      - "9000"
+      - "9001"
+    env_file:
+      - .env
+    environment:
+      MINIO_ROOT_USER: am-d-model-data-repository
+      # MINIO_ROOT_PASSWORD: CHANGE_ME
+    volumes:
+      - ./data:/data
+    command: server /data --console-address :9001
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    networks:
+      - am-d-model-repo-network
+
+volumes:
+    redis_data:
+
+networks:
+    am-d-model-repo-network:
+        name: am-d-model-repo-network

@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "am-d-model-data-repository-db",
+      "Group": "Servers",
+      "Host": "am-d-model-data-repository-db-1",
+      "Port": 5432,
+      "MaintenanceDB": "postgres",
+      "Username": "am-d-model-data-repository",
+      "SSLMode": "prefer"
+    }
+  }
+}
