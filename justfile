@@ -1,4 +1,4 @@
-update:
+update auto-rollback="false":
     #!/usr/bin/env bash
     if [ ! -f update.lock ]; then
         touch update.lock
@@ -9,7 +9,11 @@ update:
         docker compose build
         docker compose up -d --wait
         rm update.lock
-        just healthcheck || just rollback
+        if [ "{{auto-rollback}}" = "true" ]; then
+            just healthcheck || just rollback
+        else
+            just healthcheck  || echo "Healthcheck failed. Consider rolling back by running \"just rollback\" manually if needed."
+        fi
     else
         echo "Update already in progress"
     fi
@@ -24,7 +28,7 @@ merge-and-push-prod:
 remote-update:
     #!/usr/bin/env bash
     just merge-and-push-prod
-    ssh am-d-model_eu "cd am-d-model.eu && just update"
+    ssh am-d-model_eu "cd am-d-model.eu && just update auto-rollback=true"
 
 tag-version:
     #!/usr/bin/env bash
