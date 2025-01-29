@@ -36,6 +36,8 @@ services:
     extends:
       file: docker-services.yml
       service: mq
+    networks:
+      - am-d-model-repo-network
   search:
     extends:
       file: docker-services.yml
