@@ -83,3 +83,7 @@ cleanup-versions:
         git tag -d $tag
         rm -f "versions/${tag#backup-}.txt"
     done
+
+fetch-logs container:
+    #!/usr/bin/env bash
+    ssh am-d-model_eu "docker logs am-d-modeleu-{{container}}-1 2>&1"
