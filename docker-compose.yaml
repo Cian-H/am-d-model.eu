@@ -61,7 +61,7 @@ services:
     # Frontend
     repo-frontend:
         extends:
-            file: repo/docker-services.full.yml
+            file: repo/docker-compose.full.yml
             service: frontend
         build:
             context: ./repo/
