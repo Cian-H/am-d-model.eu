@@ -1,5 +1,6 @@
 update auto-rollback="false":
     #!/usr/bin/env bash
+    set -euxo pipefail
     if [ ! -f update.lock ]; then
         touch update.lock
         just tag-version
@@ -83,3 +84,9 @@ cleanup-versions:
         git tag -d $tag
         rm -f "versions/${tag#backup-}.txt"
     done
+
+cleanup:
+    docker container prune
+    docker image prune
+    docker builder prune -af
+    cleanup-versions
