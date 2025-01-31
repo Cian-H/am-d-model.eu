@@ -89,4 +89,4 @@ cleanup:
     docker container prune
     docker image prune
     docker builder prune -af
-    cleanup-versions
+    just cleanup-versions
