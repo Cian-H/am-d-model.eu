@@ -3,17 +3,22 @@
     import ScrollToTop from "$lib/components/ScrollToTop.svelte";
     import Link from "$lib/components/Link.svelte";
 
+    import { CDN } from "$lib/constants";
+
     import { navigation } from "$lib/navigation";
 </script>
 
 <div class="navigation-footer">
     <div class="navigation-footer-column-left">
-        <Link
-            class="navigation-footer-site-name"
-            text="AM-D-Model.eu"
-            hotkey="a"
-            redirectFunc={navigation.toHome}
-        />
+        <div class="navigation-footer-logo-link">
+            <a href="https://esaform.org/">
+                <img
+                    class="navigation-footer-logo"
+                    src="{CDN}/ESAFORM_logo.webp"
+                    alt="ESAFORM Logo"
+                />
+            </a>
+        </div>
         <div class="navigation-footer-social-media">
             <div class="navigation-footer-buttons-icon">
                 <img
@@ -46,14 +51,17 @@
         </div>
     </div>
     <div class="navigation-footer-column-mid">
-        <ScrollToTop
-            class="navigation-footer-return"
-            text="↥↥↥ Return to top ↥↥↥"
-        />
+        <ScrollToTop class="navigation-footer-return" text="↥↥↥ Return to top ↥↥↥" />
     </div>
     <div class="navigation-footer-column-right">
         <div class="navigation-footer-topic-column">
             <div class="navigation-footer-topic">Topic</div>
+            <Link
+                class="navigation-footer-link"
+                text="Home"
+                hotkey="d"
+                redirectFunc={navigation.toHome}
+            />
             <Link
                 class="navigation-footer-link"
                 text="Data Repository"
