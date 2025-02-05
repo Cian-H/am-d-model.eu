@@ -39,7 +39,8 @@
         <div class="landing-zone">
             <NavigationHeader
                 class="splash-navigation-header"
-                display_title={false}
+                display_home={false}
+                display_logo={false}
             />
             <Splash />
         </div>
