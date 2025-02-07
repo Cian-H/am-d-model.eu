@@ -12,6 +12,8 @@ services:
 
     caddy:
         image: docker.io/library/caddy:latest
+        # entrypoint: ["tail", "-f", "/dev/null"] # Debug
+        # command: ["tail", "-f", "/dev/null"] # Debug
         depends_on:
             - site
             - invenio.am-d-model.eu
@@ -43,8 +45,8 @@ services:
             - ./data/caddy/certificates/acme-v02.api.letsencrypt.org-directory/invenio.am-d-model.eu/invenio.am-d-model.eu.crt:/etc/ssl/certs/test.crt
             - ./data/caddy/certificates/acme-v02.api.letsencrypt.org-directory/invenio.am-d-model.eu/invenio.am-d-model.eu.key:/etc/ssl/private/test.key
             # Also, lets inject some configuration for the outer proxy
-            - ./caddy/proxy_settings.conf:/etc/nginx/conf.d/proxy_settings.conf
-            - ./caddy/internal_server.conf:/etc/nginx/conf.d/internal_server.conf
+            # - ./caddy/proxy_settings.conf:/etc/nginx/conf.d/proxy_settings.conf
+            # - ./caddy/internal_server.conf:/etc/nginx/conf.d/internal_server.conf
         ports:
             - "8080:80"
             - "8443:443"
