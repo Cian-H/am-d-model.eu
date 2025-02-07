@@ -1,4 +1,4 @@
-import repo.caddyfile {
+{
 	admin off
 	debug
 	log {
@@ -6,35 +6,19 @@ import repo.caddyfile {
 	}
 }
 
-(site) {
-	@landing {
-		path / /contact* /about* /favicon.png
-	}
-	handle /_app/* {
-		reverse_proxy site:3000
-	}
-	handle @landing {
-		reverse_proxy site:3000 {
-			health_uri /health
-			health_interval 30s
-			health_timeout 10s
-			health_status 200
-		}
-	}
-	handle /repo* {
-		uri strip_prefix /repo
-		import repo_site
-	}
-}
-
-:80 {
-	import site
-}
-
-http://am-d-model.eu {
-	import site
-}
-
 am-d-model.eu {
-	import site
+	reverse_proxy site:3000 {
+		health_uri /health
+		health_interval 30s
+		health_timeout 10s
+		health_status 200
+	}
+}
+
+invenio.am-d-model.eu {
+        reverse_proxy invenio.am-d-model.eu:8080 {
+                header_up Host {host}
+                header_up X-Real-IP {remote_host}
+                header_up X-Forwarded-Proto "https"
+        }
 }
