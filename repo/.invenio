@@ -6,7 +6,7 @@ logfile = /logs/invenio-cli.log
 project_name = AM-D-Model Data Repository
 project_shortname = am-d-model-data-repository
 package_name = am_d_model_data_repository
-project_site = am-d-model.eu
+project_site = invenio.am-d-model.eu
 author_name = Cian Hughes
 author_email = repo@am-d-model.eu
 year = 2025
@@ -17,7 +17,7 @@ development_tools = no
 site_code = yes
 use_reduced_vocabs = no
 _template = https://github.com/inveniosoftware/cookiecutter-invenio-rdm.git
-_output_dir = /home/ec2-user
+_output_dir = /home/ec2-user/am-d-model.eu
 
 [files]
 app_data = {'pages': {'.gitkeep': '22818f8c9f68fb11b7ca893ad1c082f844ae9f691f082d2174e32738d9ae6114'}, 'vocabularies': {'cc_licences.csv': '19a8bfd2488c7adb90d1dbe1c70f57cf2e0a737cb11814cc814f917072843de7', 'languages.yaml': 'd3bdb59940e8e6cd2401785ad55733f5fc6a1fb0bb0a2005a8fe4e5148e5f286', 'names.yaml': '6dc80984186ec960bcf53fbb6c482554d0aaf386d345bf82f504fdbd896e5848', 'subjects_oecd_fos.yaml': 'eef38714c506d956193c3be17e6004049525d252bf22424f4804dfc1ad46db44', 'affiliations_ror.yaml': '2e913fbecacd3694cba1b9a10739164911c2d45db3b32f1cb923027c48e0ac3e'}, 'README.md': 'd58978488626bdeddc791a15a39e341a4ed06f202b84d0c0d4aa9ef49481c6d9', 'vocabularies.yaml': '86f780281913b4ed5683775632d36511b16dff4b4f90fa7f14127cf69ab4e0cc'}

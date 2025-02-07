@@ -14,6 +14,7 @@
 # - OpenSearch (exposed ports: 9200, 9600)
 # - Kibana (view ES indexes) (exposed ports: 5601)
 #
+version: "2.2"
 services:
     cache:
         extends:
@@ -37,4 +38,3 @@ services:
             service: s3
 volumes:
     data:
-    redis_data:
