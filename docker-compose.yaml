@@ -14,7 +14,7 @@ services:
         image: docker.io/library/caddy:latest
         depends_on:
             - site
-            - repo-web-ui
+            - invenio.am-d-model.eu
         networks:
             - am-d-model-proxy-network
             - am-d-model-site-network
@@ -22,75 +22,112 @@ services:
             - "80:80"
             - "443:443"
         volumes:
-            - caddy_data:/data
+            - ./data/caddy:/data/caddy
             - ./caddy:/etc/caddy
-            - static_data:/opt/invenio/var/instance/static
         restart: unless-stopped
         labels:
             - "io.containers.autoupdate=registry"
-    repo-cache:
+    # Repo containers start here
+    # Repo frontend:
+    invenio.am-d-model.eu:
         extends:
-            file: repo/docker-compose.full.yml
-            service: cache
-        networks:
-            - am-d-model-repo-network
-    repo-db:
-        extends:
-            file: repo/docker-compose.full.yml
-            service: db
-        networks:
-            - am-d-model-repo-network
-    repo-mq:
-        extends:
-            file: repo/docker-compose.full.yml
-            service: mq
-        networks:
-            - am-d-model-repo-network
-    repo-search:
-        extends:
-            file: repo/docker-compose.full.yml
-            service: search
-        networks:
-            - am-d-model-repo-network
-    repo-s3:
-        extends:
-            file: repo/docker-compose.full.yml
-            service: s3
-        networks:
-            - am-d-model-repo-network
-    # Frontend
-    repo-frontend:
-        extends:
-            file: repo/docker-compose.full.yml
+            file: repo/docker-services.yml
             service: frontend
-        build:
-            context: ./repo/
+        env_file: ./repo/.env
+        depends_on:
+            - web-ui
+            - web-api
+        volumes:
+            - static_data:/opt/invenio/var/instance/static
+            # Overwrite test certs with certs fetched by caddy
+            - ./data/caddy/certificates/acme-v02.api.letsencrypt.org-directory/invenio.am-d-model.eu/invenio.am-d-model.eu.crt:/etc/ssl/certs/test.crt
+            - ./data/caddy/certificates/acme-v02.api.letsencrypt.org-directory/invenio.am-d-model.eu/invenio.am-d-model.eu.key:/etc/ssl/private/test.key
+            # Also, lets inject some configuration for the outer proxy
+            - ./caddy/proxy_settings.conf:/etc/nginx/conf.d/proxy_settings.conf
+            - ./caddy/internal_server.conf:/etc/nginx/conf.d/internal_server.conf
+        ports:
+            - "8080:80"
+            - "8443:443"
         networks:
             - am-d-model-proxy-network
             - am-d-model-repo-network
+    cache:
+        extends:
+            file: repo/docker-compose.full.yml
+            service: cache
+        env_file: ./repo/.env
+        networks:
+            - am-d-model-repo-network
+    db:
+        extends:
+            file: repo/docker-compose.full.yml
+            service: db
+        env_file: ./repo/.env
+        networks:
+            - am-d-model-repo-network
+    mq:
+        extends:
+            file: repo/docker-compose.full.yml
+            service: mq
+        env_file: ./repo/.env
+        networks:
+            - am-d-model-repo-network
+    search:
+        extends:
+            file: repo/docker-compose.full.yml
+            service: search
+        env_file: ./repo/.env
+        networks:
+            - am-d-model-repo-network
+    s3:
+        extends:
+            file: repo/docker-compose.full.yml
+            service: s3
+        env_file: ./repo/.env
+        networks:
+            - am-d-model-repo-network
     # UI Application
-    repo-web-ui:
+    web-ui:
         extends:
             file: repo/docker-compose.full.yml
             service: web-ui
+        env_file: ./repo/.env
         build:
             context: ./repo/
         networks:
             - am-d-model-repo-network
+        environment:
+            - UWSGI_LOG_DEBUG=true
+            - UWSGI_LOG_REQ=true     # Log requests
+            - UWSGI_LOG_SLOW=true    # Log slow requests
+            - UWSGI_LOG_ZERO=true    # Log empty requests
+            - UWSGI_LOG_4XX=true     # Log 4xx errors
+            - UWSGI_LOG_5XX=true     # Log 5xx errors
+            - UWSGI_LOG_MICROS=true  # Add microseconds to logs
     # API Rest Application
-    repo-web-api:
+    web-api:
         extends:
             file: repo/docker-compose.full.yml
             service: web-api
+        env_file: ./repo/.env
         build:
             context: ./repo/
         networks:
             - am-d-model-repo-network
+        environment:
+            - UWSGI_LOG_DEBUG=true
+            - UWSGI_LOG_REQ=true     # Log requests
+            - UWSGI_LOG_SLOW=true    # Log slow requests
+            - UWSGI_LOG_ZERO=true    # Log empty requests
+            - UWSGI_LOG_4XX=true     # Log 4xx errors
+            - UWSGI_LOG_5XX=true     # Log 5xx errors
+            - UWSGI_LOG_MICROS=true  # Add microseconds to logs
     # Worker
-    repo-worker:
+    worker:
         extends:
             file: repo/docker-compose.full.yml
             service: worker
+        env_file: ./repo/.env
         build:
             context: ./repo/
         networks:
@@ -98,7 +135,7 @@ services:
 
 networks:
     am-d-model-site-network:
-        name: am-d-model-repo-network
+        name: am-d-model-site-network
     am-d-model-repo-network:
         name: am-d-model-repo-network
     am-d-model-proxy-network:
