@@ -79,8 +79,12 @@ services:
             file: repo/docker-compose.full.yml
             service: search
         env_file: ./repo/.env
+        volumes:
+            - opensearch_config:/usr/share/opensearch/config
         networks:
             - am-d-model-repo-network
+        environment:
+          - discovery.type=single-node
     s3:
         extends:
             file: repo/docker-compose.full.yml
@@ -99,13 +103,20 @@ services:
         networks:
             - am-d-model-repo-network
         environment:
+            - INVENIO_APP_ALLOWED_HOSTS=["invenio.am-d-model.eu"]
             - UWSGI_LOG_DEBUG=true
             - UWSGI_LOG_REQ=true     # Log requests
             - UWSGI_LOG_SLOW=true    # Log slow requests
             - UWSGI_LOG_ZERO=true    # Log empty requests
+            - UWSGI_LOG_DATE=true    # Log dates of requests
             - UWSGI_LOG_4XX=true     # Log 4xx errors
             - UWSGI_LOG_5XX=true     # Log 5xx errors
             - UWSGI_LOG_MICROS=true  # Add microseconds to logs
+            - UWSGI_LOG_MASTER=true
+            - UWSGI_LOG_MASTER_FD=2  # This sends to stderr
+            - UWSGI_LOG_REQ=true
+            - UWSGI_LOG_MASTER_BUFSIZE=10000  # Optional, controls buffer size
+            - FLASK_DEBUG=1
     # API Rest Application
     web-api:
         extends:
@@ -117,13 +128,20 @@ services:
         networks:
             - am-d-model-repo-network
         environment:
+            - INVENIO_APP_ALLOWED_HOSTS=["invenio.am-d-model.eu"]
             - UWSGI_LOG_DEBUG=true
             - UWSGI_LOG_REQ=true     # Log requests
             - UWSGI_LOG_SLOW=true    # Log slow requests
             - UWSGI_LOG_ZERO=true    # Log empty requests
+            - UWSGI_LOG_DATE=true    # Log dates of requests
             - UWSGI_LOG_4XX=true     # Log 4xx errors
             - UWSGI_LOG_5XX=true     # Log 5xx errors
             - UWSGI_LOG_MICROS=true  # Add microseconds to logs
+            - UWSGI_LOG_MASTER=true
+            - UWSGI_LOG_MASTER_FD=2  # This sends to stderr
+            - UWSGI_LOG_REQ=true
+            - UWSGI_LOG_MASTER_BUFSIZE=10000  # Optional, controls buffer size
+            - FLASK_DEBUG=1
     # Worker
     worker:
         extends:
@@ -147,3 +165,4 @@ volumes:
     caddy_data:
     static_data:
     redis_data:
+    opensearch_config:
