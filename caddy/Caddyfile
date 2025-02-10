@@ -16,9 +16,13 @@ am-d-model.eu {
 }
 
 invenio.am-d-model.eu {
-        reverse_proxy invenio.am-d-model.eu:8080 {
+        reverse_proxy invenio.am-d-model.eu:443 {
                 header_up Host {host}
                 header_up X-Real-IP {remote_host}
                 header_up X-Forwarded-Proto "https"
+		transport http {
+			tls
+			tls_insecure_skip_verify
+		}
         }
 }
