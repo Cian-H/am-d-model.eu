@@ -83,3 +83,8 @@ cleanup-versions:
         git tag -d $tag
         rm -f "versions/${tag#backup-}.txt"
     done
+
+deploy:
+    #!/usr/bin/env bash
+    docker compose up -d --wait
+    docker exec -it am-d-modeleu-worker-1 setup.sh
