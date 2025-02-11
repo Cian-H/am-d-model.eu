@@ -3,11 +3,14 @@
     import Button from "$lib/components/Button.svelte";
     import Link from "$lib/components/Link.svelte";
 
+    import { CDN } from "$lib/constants";
+
     export let items_class = "";
     export let link_class = "";
     export let button_class = "";
     export let button_text_class = "";
-    export let display_title = true;
+    export let display_home = true;
+    export let display_logo = true;
 
     import { navigation } from "$lib/navigation";
 </script>
@@ -15,6 +18,14 @@
 <div class={$$props.class}>
     <div class="navigation-header">
         <div class="flexrow-right navigation-header-items {items_class}">
+            {#if display_home}
+                <Link
+                    class="navigation-header-link {link_class}"
+                    text="Home"
+                    hotkey="d"
+                    redirectFunc={navigation.toHome}
+                />
+            {/if}
             <Link
                 class="navigation-header-link {link_class}"
                 text="Data Repository"
@@ -35,14 +46,15 @@
                 redirectFunc={navigation.toContact}
             />
         </div>
-        {#if display_title}
-            <div class="flexrow-left navigation-header-items {items_class}">
-                <Link
-                    class="navigation-header-site-name"
-                    text="AM-D-Model.eu"
-                    hotkey="a"
-                    redirectFunc={navigation.toHome}
-                />
+        {#if display_logo}
+            <div class="flexrow-left navigation-header-logo-link {items_class}">
+                <a href="https://esaform.org/">
+                    <img
+                        class="navigation-header-logo"
+                        src="{CDN}/ESAFORM_logo.webp"
+                        alt="ESAFORM Logo"
+                    />
+                </a>
             </div>
         {/if}
     </div>
