@@ -4,11 +4,7 @@
     export let hotkey = "";
 
     function handleKeypress(event) {
-        if (
-            event.key === hotkey ||
-            event.key === "Enter" ||
-            event.key === " "
-        ) {
+        if (event.key === hotkey || event.key === "Enter" || event.key === " ") {
             event.preventDefault();
             redirectFunc();
         }

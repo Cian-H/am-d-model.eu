@@ -6,8 +6,7 @@
 
     import { CDN } from "$lib/constants";
 
-    const EMAIL_ENDPOINT =
-        "https://bst564m4ws3ouxg27nqrpfqv5a0jbhxi.lambda-url.eu-west-1.on.aws/";
+    const EMAIL_ENDPOINT = "https://bst564m4ws3ouxg27nqrpfqv5a0jbhxi.lambda-url.eu-west-1.on.aws/";
 </script>
 
 <div class="contact-page">
@@ -17,16 +16,12 @@
             <h1>Contact Us</h1>
             <h2>We look forward to hearing from you!</h2>
             <p>
-                Interested in contributing, collaborating, or otherwise getting
-                in touch with the AM-D-Model team? We are always looking for
-                input on our project from others in the wider L-PBF research
-                community. Please use the form below to email our corresponding
+                Interested in contributing, collaborating, or otherwise getting in touch with the
+                AM-D-Model team? We are always looking for input on our project from others in the
+                wider L-PBF research community. Please use the form below to email our corresponding
                 researcher and they will reply as soon as they are able.
             </p>
-            <ContactForm
-                class="contact-form"
-                emailEndpointApi={EMAIL_ENDPOINT}
-            />
+            <ContactForm class="contact-form" emailEndpointApi={EMAIL_ENDPOINT} />
         </div>
         <div class="contact-image-column">
             <div class="contact-image-pane hover:bg-blue-200">
