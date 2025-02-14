@@ -87,7 +87,7 @@ cleanup-versions:
 deploy:
     #!/usr/bin/env bash
     docker compose up -d --wait
-    docker exec -it am-d-modeleu-worker-1 ./setup.sh
+    docker compose exec -it worker setup.sh
 
 fmt:
     bun run prettier --write "**/*.{js,jsx,ts,tsx,html,css,scss,sass,svelte,yaml,json,markdown}"
