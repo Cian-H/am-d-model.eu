@@ -18,9 +18,31 @@ h5,
     -webkit-font-smoothing: antialiased;
 }
 
+table {
+    font-size: 24pt;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
 menu,
 ol,
-ul {
+ul,
+dl {
     list-style-type: none;
     list-style-position: inside;
     margin: 0;
@@ -68,6 +90,12 @@ p {
 }
 
 @media (max-width: 620px) {
+    table {
+        font-size: 18pt;
+    }
+}
+
+@media (max-width: 620px) {
     h1 {
         font-size: 54pt;
     }
@@ -82,7 +110,8 @@ p {
     }
 
     ol,
-    ul {
+    ul,
+    dl {
         font-size: 16pt;
     }
 }
@@ -101,13 +130,19 @@ p {
         font-size: 16pt;
     }
 
+    table,
     ol,
-    ul {
+    ul,
+    dl {
         font-size: 14pt;
     }
 }
 
 @media (max-width: 380px) {
+    table {
+        font-size: 16pt;
+    }
+
     h1 {
         font-size: 36pt;
     }
@@ -121,8 +156,10 @@ p {
         font-size: 16pt;
     }
 
+    table,
     ol,
-    ul {
+    ul,
+    dl {
         font-size: 14pt;
     }
 }

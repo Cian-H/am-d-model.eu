@@ -8,6 +8,7 @@ export const navigation = {
     toRepository: () => {
         window.location.href = "https://invenio.am-d-model.eu/";
     },
+    toMethodology: () => goto("/methodology"),
     to404: () => {
         throw error(404, "Page not found");
     },

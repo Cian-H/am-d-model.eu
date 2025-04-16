@@ -70,6 +70,12 @@
             />
             <Link
                 class="navigation-footer-link"
+                text="Data Methodology"
+                hotkey="d"
+                redirectFunc={navigation.toMethodology}
+            />
+            <Link
+                class="navigation-footer-link"
                 text="How to Contribute"
                 hotkey="h"
                 redirectFunc={navigation.toAbout}

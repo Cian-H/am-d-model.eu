@@ -1,5 +1,6 @@
 <script>
     import "$lib/styles/NavigationHeader.scss";
+    import Dropdown from "$lib/components/Dropdown.svelte";
     import Button from "$lib/components/Button.svelte";
     import Link from "$lib/components/Link.svelte";
 
@@ -13,6 +14,11 @@
     export let display_logo = true;
 
     import { navigation } from "$lib/navigation";
+
+    const dataItems = [
+        { text: "Repository", redirectFunc: navigation.toRepository, hotkey: "dr" },
+        { text: "Methodology", redirectFunc: navigation.toMethodology, hotkey: "dm" },
+    ];
 </script>
 
 <div class={$$props.class}>
@@ -26,12 +32,7 @@
                     redirectFunc={navigation.toHome}
                 />
             {/if}
-            <Link
-                class="navigation-header-link {link_class}"
-                text="Data Repository"
-                hotkey="d"
-                redirectFunc={navigation.toRepository}
-            />
+            <Dropdown label="Data" items={dataItems} class="navigation-header-link {link_class}" />
             <Link
                 class="navigation-header-link {link_class}"
                 text="How to Contribute"

@@ -30,6 +30,7 @@
     },
     "dependencies": {
         "@tailwindcss/forms": "^0.5.10",
+        "katex": "^0.16.22",
         "lucide-svelte": "^0.471.0"
     },
     "private": true

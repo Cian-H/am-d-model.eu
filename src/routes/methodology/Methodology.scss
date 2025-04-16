@@ -1,0 +1,190 @@
+main {
+  padding: 5% 5% 5% 5%;
+}
+
+p {
+  text-align: justify;
+}
+
+figcaption {
+  text-align: center;
+  padding: 4px 0 4px 0;
+}
+
+.methodology,
+.methodology * {
+  box-sizing: border-box;
+}
+
+.methodology {
+  background: var(--cpalettecomplimentary);
+  width: 100vw;
+  min-width: 250px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.copy {
+  padding: 0 8px 0 8px;
+}
+
+.copy-with-figure {
+  @apply grid grid-cols-1 gap-8;
+
+  @media (min-width: 768px) {
+    @apply grid-cols-2
+  }
+
+  div {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.param-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 24px;
+
+  dl {
+    @apply space-y-2;
+
+    div {
+      @apply items-start;
+
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  dl,
+  dt,
+  dd {
+    font-size: 24pt;
+
+    @media (max-width: 820px) {
+      font-size: 18pt;
+    }
+
+    @media (max-width: 620px) {
+      font-size: 14pt;
+    }
+
+    @media (max-width: 420px) {
+      font-size: 12pt;
+    }
+
+    @media (max-width: 380px) {
+      font-size: 10pt;
+    }
+  }
+
+  dt {
+    @apply font-semibold text-gray-700;
+  }
+
+  dd {
+    @apply flex-1 text-gray-500;
+  }
+}
+
+.laser-param-list {
+  @extend .param-list;
+
+  dt {
+    width: 416px;
+
+    @media (max-width: 820px) {
+      width: 256px;
+    }
+
+    @media (max-width: 620px) {
+      width: 184px;
+    }
+
+    @media (max-width: 420px) {
+      width: 142px;
+    }
+
+    @media (max-width: 380px) {
+      width: 112px;
+    }
+  }
+}
+
+.ved-param-list {
+  @extend .param-list;
+
+  dt {
+    width: 832px;
+
+    @media (max-width: 1280px) {
+      width: 532px;
+      padding-bottom: 16px
+    }
+
+    @media (max-width: 1024px) {
+      width: 410px;
+    }
+
+    @media (max-width: 820px) {
+      width: 256px;
+    }
+
+    @media (max-width: 514px) {
+      width: 128px;
+    }
+  }
+}
+
+.equation-container {
+  padding: 8px 0 8px 0;
+}
+
+.equation {
+  font-size: 36px;
+
+  @media (max-width: 720px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 370px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 300px) {
+    font-size: 12px;
+  }
+}
+
+.pyrometry-param-list {
+  @extend .param-list;
+
+  dt {
+    width: 512px;
+
+    @media (max-width: 820px) {
+      width: 352px;
+    }
+
+    @media (max-width: 620px) {
+      width: 184px;
+    }
+
+    @media (max-width: 420px) {
+      width: 142px;
+    }
+
+    @media (max-width: 380px) {
+      width: 112px;
+    }
+  }
+}
