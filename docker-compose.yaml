@@ -9,6 +9,13 @@ services:
         restart: unless-stopped
         labels:
             - "io.containers.autoupdate=local"
+        logging:
+            driver: awslogs
+            options:
+              awslogs-region: eu-west-1
+              awslogs-group: AM-D-Model_eu
+              awslogs-stream: site
+              awslogs-create-group: "true"
 
     caddy:
         image: docker.io/library/caddy:latest
@@ -26,6 +33,13 @@ services:
         restart: unless-stopped
         labels:
             - "io.containers.autoupdate=registry"
+        logging:
+            driver: awslogs
+            options:
+              awslogs-region: eu-west-1
+              awslogs-group: AM-D-Model_eu
+              awslogs-stream: caddy
+              awslogs-create-group: "true"
     invenio-rdm:
         image: ghcr.io/front-matter/invenio-rdm-starter:v12.0.13.4
         networks:
@@ -129,6 +143,13 @@ services:
                 condition: service_started
             db:
                 condition: service_started
+        logging:
+            driver: awslogs
+            options:
+              awslogs-region: eu-west-1
+              awslogs-group: AM-D-Model_eu
+              awslogs-stream: invenio-rdm
+              awslogs-create-group: "true"
     worker:
         command: "celery -A invenio_app.celery worker --beat --events --loglevel=WARNING"
         networks:
@@ -173,6 +194,13 @@ services:
                 condition: service_started
             db:
                 condition: service_started
+        logging:
+            driver: awslogs
+            options:
+              awslogs-region: eu-west-1
+              awslogs-group: AM-D-Model_eu
+              awslogs-stream: worker
+              awslogs-create-group: "true"
     cache:
         image: valkey/valkey:7.2.5-bookworm
         networks:
@@ -182,6 +210,13 @@ services:
             - "valkey_data:/data"
         ports:
             - "6379:6379"
+        logging:
+            driver: awslogs
+            options:
+              awslogs-region: eu-west-1
+              awslogs-group: AM-D-Model_eu
+              awslogs-stream: cache
+              awslogs-create-group: "true"
     db:
         image: postgres:16.4-bookworm
         networks:
@@ -195,6 +230,13 @@ services:
             - "postgres_data:/var/lib/postgresql/data"
         ports:
             - 5432:5432
+        logging:
+            driver: awslogs
+            options:
+              awslogs-region: eu-west-1
+              awslogs-group: AM-D-Model_eu
+              awslogs-stream: db
+              awslogs-create-group: "true"
     search:
         image: opensearchproject/opensearch:2.12.0
         networks:
@@ -219,6 +261,13 @@ services:
         ports:
             - "9200:9200"
             - "9600:9600"
+        logging:
+            driver: awslogs
+            options:
+              awslogs-region: eu-west-1
+              awslogs-group: AM-D-Model_eu
+              awslogs-stream: search
+              awslogs-create-group: "true"
 
 networks:
     am-d-model-network:
