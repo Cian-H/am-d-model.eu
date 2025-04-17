@@ -23,7 +23,7 @@
 
 <div class={$$props.class}>
     <div class="navigation-header">
-        <div class="flexrow-right navigation-header-items {items_class}">
+        <div class="navigation-header-items {items_class}">
             {#if display_home}
                 <Link
                     class="navigation-header-link {link_class}"
@@ -48,7 +48,7 @@
             />
         </div>
         {#if display_logo}
-            <div class="flexrow-left navigation-header-logo-link {items_class}">
+            <div class="navigation-header-logo-link {items_class}">
                 <a href="https://esaform.org/">
                     <img
                         class="navigation-header-logo"
