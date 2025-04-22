@@ -136,6 +136,9 @@ services:
             - INVENIO_SECURITY_REGISTERABLE=False # Disable manual user registration
             - INVENIO_MAIL_SUPPRESS_SEND=False # Allow server to send emails
             - INVENIO_RDM_DEFAULT_CITATION_STYLE = "vancouver"
+
+            # Custom gunicorn config settings
+            - GUNICORN_CMD_ARGS=--timeout 300 --graceful-timeout 120
         depends_on:
             search:
                 condition: service_started
@@ -187,6 +190,9 @@ services:
             - INVENIO_S3_ACCESS_KEY_ID=${INVENIO_S3_ACCESS_KEY_ID:-}
             - INVENIO_S3_SECRET_ACCESS_KEY=${INVENIO_S3_SECRET_ACCESS_KEY:-}
             - INVENIO_S3_BUCKET_NAME=${INVENIO_S3_BUCKET_NAME:-}
+
+            # Custom gunicorn config settings
+            - GUNICORN_CMD_ARGS=--timeout 300 --graceful-timeout 120
         depends_on:
             search:
                 condition: service_started
