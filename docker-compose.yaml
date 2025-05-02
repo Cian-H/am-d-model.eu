@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json
 services:
     site:
-        build: .
+        build: src
         networks:
             - am-d-model-network
         expose:
@@ -41,14 +41,15 @@ services:
               awslogs-stream: caddy
               awslogs-create-group: "true"
     invenio-rdm:
-        image: ghcr.io/front-matter/invenio-rdm-starter:v12.0.13.4
+        image: invenio
         networks:
             - am-d-model-network
         pull_policy: if_not_present
         volumes:
             - uploaded_data:/opt/invenio/var/instance/data
             - archived_data:/opt/invenio/var/instance/archive
-            - ./invenio_assets:/opt/invenio/var/instance/static/custom_assets # Add static assets for theming
+            - ./invenio/assets:/opt/invenio/var/instance/static/custom_assets # Add static assets for theming
+            - ./invenio/plugin:/opt/invenio/var/instance/static/plugin # Add plugin for customisations
             - ./invenio.cfg:/opt/invenio/var/instance/invenio.cfg # Override the config with our custom one
         environment:
             # Production mode
@@ -154,10 +155,10 @@ services:
               awslogs-stream: invenio-rdm
               awslogs-create-group: "true"
     worker:
+        image: invenio
         command: "celery -A invenio_app.celery worker --beat --events --loglevel=WARNING"
         networks:
             - am-d-model-network
-        image: ghcr.io/front-matter/invenio-rdm-starter:v12.0.13.4
         pull_policy: if_not_present
         volumes:
             - uploaded_data:/opt/invenio/var/instance/data
