@@ -6,7 +6,7 @@ setup(
     packages=["custom_invenio_plugin"],
     entry_points={
         "invenio_base.apps": [
-            "custom_menu = custom_invenio_plugin:init_app",
+            "custom_invenio_plugin = custom_invenio_plugin:init_app",
         ],
     },
 )
