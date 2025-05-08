@@ -1,15 +1,14 @@
 from flask import Blueprint
 
-blueprint = Blueprint(
-    "custom_menu",
-    __name__,
-)
-
 
 def init_app(app):
     """Initialize application."""
-    app.register_blueprint(blueprint)
-
     from . import views
+
+    app.register_blueprint(views.blueprint)
+
+    @app.before_first_request
+    def init_menus():
+        views.init_menu()
 
     return app
