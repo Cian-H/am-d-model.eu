@@ -4,7 +4,7 @@ from flask import redirect
 def init_app(app):
     """Initialize application."""
 
-    @app.route("/redirect-to-amdmodel")
+    @app.route("/amdmodel_landing")
     def redirect_to_amdmodel():
         """Redirect to the AM-D-Model website."""
         return redirect("https://am-d-model.eu")
@@ -14,7 +14,7 @@ def init_app(app):
         from flask_menu import current_menu
 
         current_menu.submenu("main").register(
-            "custom_invenio_plugin.redirect_to_amdmodel",
+            "amdmodel_landing",
             text="About AM-D-Model",
             order=0,
         )
