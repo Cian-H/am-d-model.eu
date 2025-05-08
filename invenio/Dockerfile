@@ -8,4 +8,4 @@ COPY assets /opt/invenio/var/instance/static/custom_assets
 RUN /opt/invenio/.venv/bin/python -m ensurepip
 COPY plugin /opt/invenio/var/instance/static/plugin
 RUN /opt/invenio/.venv/bin/python -m pip install /opt/invenio/var/instance/static/plugin
-RUN /opt/invenio/.venv/bin/python -m pip uninstall pip
+RUN /opt/invenio/.venv/bin/python -m pip uninstall -y pip
