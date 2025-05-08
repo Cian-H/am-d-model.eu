@@ -3,7 +3,6 @@ from flask import redirect
 
 def init_app(app):
     """Initialize application."""
-    from . import views
 
     @app.route("/redirect-to-amdmodel")
     def redirect_to_amdmodel():
