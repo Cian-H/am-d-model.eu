@@ -10,9 +10,8 @@ blueprint = Blueprint(
 @blueprint.before_app_first_request
 def init_menu():
     """Add custom items to main menu."""
-    main_menu = current_menu
-
-    main_menu.submenu("main").register(
+    current_menu.submenu("main").register(
+        "amdmodel",
         text="About AM-D-Model",
         external_url="https://am-d-model.eu",
         order=0,
