@@ -48,9 +48,6 @@ services:
         volumes:
             - uploaded_data:/opt/invenio/var/instance/data
             - archived_data:/opt/invenio/var/instance/archive
-            - ./invenio/assets:/opt/invenio/var/instance/static/custom_assets # Add static assets for theming
-            - ./invenio/plugin:/opt/invenio/var/instance/plugin # Add plugin for customisations
-            - ./invenio/invenio.cfg:/opt/invenio/var/instance/invenio.cfg # Override the config with our custom one
         environment:
             # Production mode
             - INVENIO_ENV=production
