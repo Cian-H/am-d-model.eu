@@ -26,7 +26,7 @@
             alt: "National University of Singapore Logo",
         },
         {
-            href: "https://strath.ac.uk",
+            href: "https://www.strath.ac.uk",
             src: CDN + "/USG_Logo.webp",
             alt: "Strathclyde University Logo",
         },
