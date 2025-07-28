@@ -6,6 +6,41 @@
     import { CDN } from "$lib/constants";
 
     import { navigation } from "$lib/navigation";
+
+    const partnerLogos = [
+        {
+            href: "https://dcu.ie/",
+            src: CDN + "/DCU_Logo.webp",
+            alt: "Dublin City University Logo",
+        },
+        { href: "https://ethz.ch", src: CDN + "/ETHZ_Logo.webp", alt: "ETH Zurich Logo" },
+        {
+            href: "https://uliege.be",
+            src: CDN + "/UL_Logo.webp",
+            alt: "University of Liege Logo",
+        },
+        { href: "https://aalto.fi", src: CDN + "/AU_Logo.webp", alt: "Aalto University Logo" },
+        {
+            href: "https://nus.edu.sg",
+            src: CDN + "/NUS_Logo.webp",
+            alt: "National University of Singapore Logo",
+        },
+        {
+            href: "https://strath.ac.uk",
+            src: CDN + "/USG_Logo.webp",
+            alt: "Strathclyde University Logo",
+        },
+        {
+            href: "https://dtu.dk",
+            src: CDN + "/DTU_Logo.webp",
+            alt: "Danmarks Teksnike Universitet Logo",
+        },
+        {
+            href: "https://eng.pw.edu.pl",
+            src: CDN + "/WUT_Logo.webp",
+            alt: "Warsaw University of Technology Logo",
+        },
+    ];
 </script>
 
 <div class="navigation-footer">
@@ -19,35 +54,12 @@
                 />
             </a>
         </div>
-        <div class="navigation-footer-social-media">
-            <div class="navigation-footer-buttons-icon">
-                <img
-                    class="navigation-footer-social-icon"
-                    src="https://s.magecdn.com/social/mb-facebook.svg"
-                    alt="Black Facebook icon"
-                />
-            </div>
-            <div class="navigation-footer-buttons-icon">
-                <img
-                    class="navigation-footer-social-icon"
-                    src="https://s.magecdn.com/social/mb-linkedin.svg"
-                    alt="Black LinkedIn icon"
-                />
-            </div>
-            <div class="navigation-footer-buttons-icon">
-                <img
-                    class="navigation-footer-social-icon"
-                    src="https://s.magecdn.com/social/mb-youtube.svg"
-                    alt="Black YouTube icon"
-                />
-            </div>
-            <div class="navigation-footer-buttons-icon">
-                <img
-                    class="navigation-footer-social-icon"
-                    src="https://s.magecdn.com/social/mb-instagram.svg"
-                    alt="Black Instagram icon"
-                />
-            </div>
+        <div class="logo-grid-container">
+            {#each partnerLogos as logo (logo.src)}
+                <a href={logo.href} target="_blank" rel="noopener noreferrer" title={logo.alt}>
+                    <img src={logo.src} alt={logo.alt} class="grid-logo" />
+                </a>
+            {/each}
         </div>
     </div>
     <div class="navigation-footer-column-mid">
