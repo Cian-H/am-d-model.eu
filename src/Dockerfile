@@ -7,7 +7,7 @@ ENV NODE_ENV="production"
 RUN dnf upgrade --assumeyes
 RUN dnf install --assumeyes unzip git
 
-RUN curl -fsSL https://bun.sh/install | bash
+RUN curl -fsSL https://bun.com/install | bash
 ENV PATH="/root/.bun/bin:${PATH}"
 
 RUN mkdir /src
