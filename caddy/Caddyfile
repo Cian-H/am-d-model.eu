@@ -2,6 +2,13 @@
 	admin off
 }
 
+timeouts {
+	read_body 1h
+	read_header 10s
+	write 1h
+	write 1h
+}
+
 am-d-model.eu {
 	reverse_proxy site:3000 {
 		health_uri /health
@@ -14,12 +21,6 @@ am-d-model.eu {
 invenio.am-d-model.eu {
 	request_body {
 		max_size 1TB
-	}
-	timeouts {
-		read_body 1h
-		read_header 10s
-		write 1h
-		write 1h
 	}
 	root /static/* /opt/invenio/var/instance/static
 	try_files {path} {path}/ /index.html
