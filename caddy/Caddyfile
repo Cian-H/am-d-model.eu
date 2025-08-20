@@ -1,5 +1,12 @@
 {
 	admin off
+	http_port 80
+	https_port 443
+	servers {
+		trusted_proxies static private_ranges
+		protocols h1 h2 h3
+		max_header_size 16k
+	}
 }
 
 am-d-model.eu {
@@ -12,6 +19,15 @@ am-d-model.eu {
 }
 
 invenio.am-d-model.eu {
+	rate_limit {
+		* 20 50
+	}
+	header {
+		Strict-Transport-Security "max-age=31536000;"
+		X-Frame-Options "SAMEORIGIN"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+	}
 	request_body {
 		max_size 1TB
 	}
@@ -19,7 +35,9 @@ invenio.am-d-model.eu {
 	try_files {path} {path}/ /index.html
 	reverse_proxy invenio-rdm:5000 {
 		transport http {
+			dial_timeout 10s
 			response_header_timeout 5m
+			idle_conn_timeout 10m
 		}
 	}
 	file_server
