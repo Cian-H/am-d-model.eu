@@ -2,7 +2,6 @@
 	admin off
 }
 
-
 am-d-model.eu {
 	reverse_proxy site:3000 {
 		health_uri /health
@@ -18,7 +17,11 @@ invenio.am-d-model.eu {
 	}
 	root /static/* /opt/invenio/var/instance/static
 	try_files {path} {path}/ /index.html
-	reverse_proxy invenio-rdm:5000
+	reverse_proxy invenio-rdm:5000 {
+		transport http {
+			response_header_timeout 5m
+		}
+	}
 	file_server
 	encode gzip
 }
