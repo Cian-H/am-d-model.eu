@@ -2,12 +2,6 @@
 	admin off
 }
 
-timeouts {
-	read_body 1h
-	read_header 10s
-	write 1h
-	write 1h
-}
 
 am-d-model.eu {
 	reverse_proxy site:3000 {
