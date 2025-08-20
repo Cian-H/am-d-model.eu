@@ -19,9 +19,6 @@ am-d-model.eu {
 }
 
 invenio.am-d-model.eu {
-	rate_limit {
-		* 20 50
-	}
 	header {
 		Strict-Transport-Security "max-age=31536000;"
 		X-Frame-Options "SAMEORIGIN"
@@ -37,7 +34,6 @@ invenio.am-d-model.eu {
 		transport http {
 			dial_timeout 10s
 			response_header_timeout 5m
-			idle_conn_timeout 10m
 		}
 	}
 	file_server
