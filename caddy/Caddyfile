@@ -12,6 +12,15 @@ am-d-model.eu {
 }
 
 invenio.am-d-model.eu {
+	request_body {
+		max_size 1TB
+	}
+	timeouts {
+		read_body 1h
+		read_header 10s
+		write 1h
+		write 1h
+	}
 	root /static/* /opt/invenio/var/instance/static
 	try_files {path} {path}/ /index.html
 	reverse_proxy invenio-rdm:5000
