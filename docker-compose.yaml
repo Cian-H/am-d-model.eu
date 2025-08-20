@@ -136,7 +136,7 @@ services:
             - INVENIO_RDM_DEFAULT_CITATION_STYLE = "vancouver"
 
             # Custom gunicorn config settings
-            - GUNICORN_CMD_ARGS=--worker_connections=300 --timeout 43200 --graceful-timeout 600
+            - GUNICORN_CMD_ARGS="--worker-connections=300 --timeout 43200 --graceful-timeout 600"
         depends_on:
             search:
                 condition: service_started
