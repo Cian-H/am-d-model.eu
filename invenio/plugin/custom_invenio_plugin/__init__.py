@@ -1,14 +1,15 @@
 from flask import redirect
-from flask_menu import register_menu
+from flask_menu import current_menu
 
 
 def init_app(app):
-    """Initialize application."""
+    """Initialize the application and register the menu item."""
 
-    @app.route("/amdmodel")
-    @register_menu(app, ".main.amdmodel", "About AM-D-Model")
+    @app.route("/amdmodel", endpoint="main.amdmodel")
+    @current_menu.route("About AM-D-Model")
     def redirect_to_amdmodel():
         """Redirect to the AM-D-Model website."""
         return redirect("https://am-d-model.eu")
 
     return app
+
