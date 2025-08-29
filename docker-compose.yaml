@@ -53,7 +53,7 @@ services:
             - INVENIO_ENV=production
 
             # Flask
-            - INVENIO_APP_ALLOWED_HOSTS=${INVENIO_APP_ALLOWED_HOSTS:-['0.0.0.0', 'localhost', '127.0.0.1']}
+            - INVENIO_TRUSTED_HOSTS=${INVENIO_TRUSTED_HOSTS:-['0.0.0.0', 'localhost', '127.0.0.1']}
 
             # Flask-SQLAlchemy
             - INVENIO_SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://${POSTGRES_USER:-inveniordm}:${POSTGRES_PASSWORD:-inveniordm}@db/${POSTGRES_DB:-inveniordm}
