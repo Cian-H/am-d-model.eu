@@ -8,9 +8,17 @@ def init_app(app):
     @app.route("/amdmodel")
     def redirect_to_amdmodel():
         """Redirect to the AM-D-Model website."""
-        rd = redirect("https://am-d-model.eu")
+        return redirect("https://am-d-model.eu")
+
+    def register_menu_items():
         with app.app_context():
-            rd = current_menu.register(".main.amdmodel", "About AM-D-Model")(rd)
-        return rd
+            menu_item = current_menu.submenu(".main.amdmodel")
+            menu_item.register(
+                endpoint='redirect_to_amdmodel',
+                text='About AM-D-Model'
+            )
+
+    with app.app_context():
+        register_menu_items()
 
     return app
