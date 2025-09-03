@@ -26,14 +26,14 @@ invenio.am-d-model.eu {
 		Referrer-Policy "strict-origin-when-cross-origin"
 	}
 	request_body {
-		max_size 1TB
+		max_size 5TB
 	}
 	root /static/* /opt/invenio/var/instance/static
 	try_files {path} {path}/ /index.html
 	reverse_proxy invenio-rdm:5000 {
 		transport http {
-			dial_timeout 10s
-			response_header_timeout 5m
+			dial_timeout 20s
+			response_header_timeout 10m
 		}
 	}
 	file_server
