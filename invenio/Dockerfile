@@ -1,4 +1,4 @@
-FROM ghcr.io/front-matter/invenio-rdm-starter:v12.0.13.4
+FROM ghcr.io/front-matter/invenio-rdm-starter:v13.0.1.0
 
 # Copy config and assets
 COPY invenio.cfg /opt/invenio/var/instance/invenio.cfg
